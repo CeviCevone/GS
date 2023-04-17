@@ -25,13 +25,15 @@ int setDirectionalLed(int phase)
 {
 	if(FORWARD == phase)
 	{
-		GPIOE->ODR = D23; 
+		GPIOE->BSRR = D23; 
+		GPIOE->BSRR = D22 << 16; 
 		//D23 an
 		//D22 aus
 	}
 	else if(BACKWARD == phase)
 	{
-		GPIOE->ODR = D22; 
+		GPIOE->BSRR = D22; 
+		GPIOE->BSRR = D23 << 16; 
 		//D23 aus
 		//D22 an 
 	}	
@@ -47,7 +49,8 @@ int printTicks(void)
 {
 	int i = 0; 
 	getTicks(&i);
-	GPIOD->ODR = (i & 0xFF); //letzte 8 bits von i 
+	GPIOD->BSRR = (0xFF << 16);
+	GPIOD->BSRR = (i & 0xFF); //letzte 8 bits von i 
 	return OK; 
 }
 /**

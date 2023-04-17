@@ -48,32 +48,38 @@ int main(void){
 
 	while(1)
 	{	
-		//GPIOE->ODR = D20;
 		//daten Auslesen
-		fetch(&time,&currentState, &buttons);
-		//GPIOE->ODR = 0; 
+		//GPIOE->BSRR = D20; 
+		fetch(&time,&currentState, &buttons); // 750 ns 
+		//GPIOE->BSRR = D20 << 16;
 		//zustände ändern
 		
-		if(detectPhase(&phase, currentState))
+		
+		
+		if(detectPhase(&phase, currentState)) //650 ns
 		{
 			//fehlerhandling
 			errorHandler();
 		}
 		
-		if(!(S7 & buttons))
+		
+		
+		if(!(S7 & buttons)) //sehr schnell
 		{
 			resetTicks();
 		}	
 		
 	  totalAngle(&angle); 
 		
-		if(TOLERANCE >= (time % TICKS_PER_SECOND))
+		
+		if(TOLERANCE >= (time % TICKS_PER_SECOND)) //1 mikrosec
 		{
 			deltaAngle(&angVel);
 			printValues(angle,angVel);
 		}
+		
 		//ausgabe
-		setDirectionalLed(phase); 
+		setDirectionalLed(phase); //600 ns
 		printTicks();
 	}
 }
