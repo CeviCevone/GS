@@ -30,13 +30,14 @@
 #define TICKS_PER_SECOND 90000000
 #define TOLERANCE 100
 #define D20 1 << 4
+#define TRUE 1
 
 /**
   * @brief  Main program
   * @param  None
   * @retval None
   */
-int main(void){
+int32_t main(void){
 	
 	init();  
 	
@@ -47,7 +48,7 @@ int main(void){
 	int32_t angle = 0; 
 	int32_t buttons = 0; 
 
-	while(1)
+	while(TRUE)
 	{	
 		//daten Auslesen
 		//GPIOE->BSRR = D20; 

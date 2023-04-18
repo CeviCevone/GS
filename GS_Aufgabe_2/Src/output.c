@@ -11,6 +11,7 @@
 #define D22 1 << 6
 #define END '\0'
 #define SIZE 16
+#define TICK_BIT_MASK 0xFF
 
 static char ang[SIZE] = {' '};
 static char angV[SIZE] = {' '}; 
@@ -26,8 +27,6 @@ int32_t setDirectionalLed(int32_t phase)
 {
 	if(FORWARD == phase)
 	{
-		GPIOE->ODR = D23; 
-		
 		GPIOE->BSRR = D23; 
 		GPIOE->BSRR = (D22 << 16); 
 		//D23 an
@@ -52,8 +51,8 @@ int32_t printTicks(void)
 {
 	int32_t i = 0; 
 	getTicks(&i);
-	GPIOD->BSRR = (0xFF << 16);
-	GPIOD->BSRR = (i & 0xFF); //letzte 8 bits von i 
+	GPIOD->BSRR = (TICK_BIT_MASK << 16);
+	GPIOD->BSRR = (i & TICK_BIT_MASK); //letzte 8 bits von i 
 	return OK; 
 }
 /**
@@ -104,16 +103,16 @@ static int32_t printNum(char* oldnum, int32_t newNumber, int32_t y)
 		newnum[i] = ' '; 
 	}
 
-	int32_t len = sprintf(newnum, "%d", newNumber); // "     ...", 123 -> "123\   ..."; 
+	int32_t len = sprintf(newnum, "%d", newNumber); // "     ...", 123 -> "123\0   ..."; 
 	
 	//letzte int stelle hat den wert *10^-1 fügt komma ein 
 	char temp = newnum[len-1];
 	newnum[len-1] = '.'; 
-	newnum[len] = temp; 
+	newnum[len] = temp;  
 	newnum[len+1] = END; 
   
 	
-	for(int32_t i = 0; i < SIZE; ++i)
+	for(int32_t i = 0; i < SIZE; ++i)           
 	{
 		//wenn sich eine ziffer ändert -> an die entsprechende stelle gehen 
 		if(oldnum[i] != newnum[i])

@@ -3,12 +3,13 @@
 #include "lcd.h"
 #include "errorhandling.h"
 
-#define A 0 
-#define B 2 
-#define C 3 
-#define D 1
+#define A 0b00 
+#define B 0b10
+#define C 0b11 
+#define D 0b01
 #define true 1
 #define false 0
+#define MASK_PIN_0_1 0b11
 
 static int32_t init = true; 
 static int32_t lastState = 0; 
@@ -23,8 +24,8 @@ static int32_t lastTicks = 0;
 int32_t fetch(uint32_t* time, int32_t* currentState, int32_t* buttons)
 {
 	*time = TIM2->CNT; 
-	*currentState = (GPIOF->IDR & 3); //letzte 2 bits der Eingabe holen
-	*buttons = GPIOF->IDR;
+	*currentState = (GPIOF->IDR & MASK_PIN_0_1); //letzte 2 bits der Eingabe holen 
+	*buttons = GPIOF->IDR;		
 	return OK; 
 }
 
