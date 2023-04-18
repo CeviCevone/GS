@@ -1,6 +1,6 @@
 ./itsboard/errorhandling.o: Src\errorhandling.c Inc\errorhandling.h \
-  ..\..\ITS_BRD_LIB\Inc\lcd.h ..\..\DisplayWaveshare\Inc\LCD_general.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  ..\..\ITS_BRD_LIB\Inc\lcd.h ..\..\DisplayWaveshare\Inc\LCD_general.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \

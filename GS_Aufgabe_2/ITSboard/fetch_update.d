@@ -1,4 +1,5 @@
 ./itsboard/fetch_update.o: Src\fetch_update.c Inc\fetch_update.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -6,7 +7,6 @@
   ..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h \

@@ -10,17 +10,17 @@
 #define true 1
 #define false 0
 
-static int init = true; 
-static int lastState = 0; 
-static int ticks = 0;  
-static int lastTicks = 0; 
+static int32_t init = true; 
+static int32_t lastState = 0; 
+static int32_t ticks = 0;  
+static int32_t lastTicks = 0; 
 
 /**
   * @brief  Liest die aktuellen Werte aus 
   * @param  time - der Wert des Timers, currentState - der Zustand, buttons - das Bitmuster der Knöpfe 
   * @retval none 
   */
-int fetch(unsigned int* time, int* currentState, int* buttons)
+int32_t fetch(uint32_t* time, int32_t* currentState, int32_t* buttons)
 {
 	*time = TIM2->CNT; 
 	*currentState = (GPIOF->IDR & 3); //letzte 2 bits der Eingabe holen
@@ -33,7 +33,7 @@ int fetch(unsigned int* time, int* currentState, int* buttons)
   * @param  i - die Rückgabe liefert die Phase, currentState - der aktuelle Zustand
   * @retval 1 - falls eine Phase übersprungen wurde
   */
-int detectPhase(int* i,int currentState)
+int32_t detectPhase(int32_t* i,int32_t currentState)
 {	
 	if(init)
 	{
@@ -142,7 +142,7 @@ int detectPhase(int* i,int currentState)
   * @param  i - die Rückgabe
   * @retval None
   */
-int deltaAngle(int* i)
+int32_t deltaAngle(int32_t* i)
 {
 	*i = 3*(ticks - lastTicks); 
 	lastTicks = ticks;
@@ -154,7 +154,7 @@ int deltaAngle(int* i)
   * @param  i - die Rückgabe
   * @retval None
   */
-int totalAngle(int* i)
+int32_t totalAngle(int32_t* i)
 {
 	*i = 3*ticks; 
 	return OK; 
@@ -165,7 +165,7 @@ int totalAngle(int* i)
   * @param  None
   * @retval None
   */
-int resetTicks(void)
+int32_t resetTicks(void)
 {
 	init = true; 
 	ticks = 0; 
@@ -178,7 +178,7 @@ int resetTicks(void)
   * @param  i - die Rückgabe
   * @retval None
   */
-int getTicks(int* i)
+int32_t getTicks(int32_t* i)
 {
 	*i = ticks; 
 	return OK; 

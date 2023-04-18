@@ -12,7 +12,7 @@
   * @param  None
   * @retval None
   */
-int errorHandler(void)
+int32_t errorHandler(void)
 {
 	GUI_clear(0xFFFF);
 	lcdGotoXY(1,6); 
@@ -23,7 +23,7 @@ int errorHandler(void)
 	GPIOE->BSRR = D21; //D21 an
 	while(S6 & GPIOF->IDR); // s6 = 01000000 & 11111111 = 01000000 =! 0 
 													// s6 & 10111100 -> 00000000 == 0 -> endwhile
-	GPIOE->BSRR = D21 << 16; 	//D21 aus
+	GPIOE->BSRR = (D21 << 16); 	//D21 aus
 	reset();
 	
 	return 0;

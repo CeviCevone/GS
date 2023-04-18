@@ -5,35 +5,38 @@
 #include "LCD_GUI.h" 
 #include <stdio.h>
 #include "errorhandling.h"
-
+#include <stdint.h>
 
 #define D23 1 << 7 
 #define D22 1 << 6
 #define END '\0'
+#define SIZE 16
 
-static char ang[16] = {' '};
-static char angV[16] = {' '}; 
+static char ang[SIZE] = {' '};
+static char angV[SIZE] = {' '}; 
 
-static int printNum(char* oldnum, int newNumber, int y); 
+static int32_t printNum(char* oldnum, int32_t newNumber, int32_t y); 
 
 /**
   * @brief  Setzt die Leds anhand der Phase 
   * @param  phase - die aktuelle Phase
   * @retval None
   */
-int setDirectionalLed(int phase)
+int32_t setDirectionalLed(int32_t phase)
 {
 	if(FORWARD == phase)
 	{
+		GPIOE->ODR = D23; 
+		
 		GPIOE->BSRR = D23; 
-		GPIOE->BSRR = D22 << 16; 
+		GPIOE->BSRR = (D22 << 16); 
 		//D23 an
 		//D22 aus
 	}
 	else if(BACKWARD == phase)
 	{
 		GPIOE->BSRR = D22; 
-		GPIOE->BSRR = D23 << 16; 
+		GPIOE->BSRR = (D23 << 16); 
 		//D23 aus
 		//D22 an 
 	}	
@@ -45,9 +48,9 @@ int setDirectionalLed(int phase)
   * @param  None
   * @retval None
   */
-int printTicks(void)
+int32_t printTicks(void)
 {
-	int i = 0; 
+	int32_t i = 0; 
 	getTicks(&i);
 	GPIOD->BSRR = (0xFF << 16);
 	GPIOD->BSRR = (i & 0xFF); //letzte 8 bits von i 
@@ -58,11 +61,11 @@ int printTicks(void)
   * @param  None
   * @retval None
   */
-int initDisplay(void)
+int32_t initDisplay(void)
 {
 	GUI_clear(0xFFFF);
 	
-	for(int i = 0; i < 16; ++i)
+	for(int32_t i = 0; i < SIZE; ++i)
 	{
 		ang[i] = ' '; 
 		angV[i] = ' '; 
@@ -80,7 +83,7 @@ int initDisplay(void)
   * @param  None
   * @retval None
   */
-int printValues(int angle, int angVel)
+int32_t printValues(int32_t angle, int32_t angVel)
 {
 	printNum(angV,angVel,2);
 	printNum(ang,angle,5);
@@ -92,16 +95,16 @@ int printValues(int angle, int angVel)
   * @param  oldnum - die Ziffern der letzten Zahl, newNumber - die Zahl, y - die y Position 
   * @retval None
   */
-static int printNum(char* oldnum, int newNumber, int y) 
+static int32_t printNum(char* oldnum, int32_t newNumber, int32_t y) 
 {
-	char newnum[16] = {0}; 
+	char newnum[SIZE] = {0}; 
 	
-	for(int i = 0; i < 16; ++i)
+	for(int32_t i = 0; i < SIZE; ++i)
 	{
 		newnum[i] = ' '; 
 	}
 
-	int len = sprintf(newnum, "%d", newNumber); // "     ...", 123 -> "123\   ..."; 
+	int32_t len = sprintf(newnum, "%d", newNumber); // "     ...", 123 -> "123\   ..."; 
 	
 	//letzte int stelle hat den wert *10^-1 fügt komma ein 
 	char temp = newnum[len-1];
@@ -110,7 +113,7 @@ static int printNum(char* oldnum, int newNumber, int y)
 	newnum[len+1] = END; 
   
 	
-	for(int i = 0; i < 16; ++i)
+	for(int32_t i = 0; i < SIZE; ++i)
 	{
 		//wenn sich eine ziffer ändert -> an die entsprechende stelle gehen 
 		if(oldnum[i] != newnum[i])

@@ -19,7 +19,7 @@
   * @param  None
   * @retval None
   */
-int init(void)
+int32_t init(void)
 {
 	initITSboard();                 // Initialisierung des ITS Boards
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
@@ -41,7 +41,7 @@ int init(void)
   * @param  None
   * @retval None
   */
-int reset(void)
+int32_t reset(void)
 {
 	initDisplay();
 	initTimer();

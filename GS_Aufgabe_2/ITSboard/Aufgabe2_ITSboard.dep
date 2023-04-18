@@ -648,7 +648,7 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x633
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x633728E8)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x633728E8)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x633728E8)
-F (./Src/main.c)(0x643D5B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/main.o -MD)
+F (./Src/main.c)(0x643E8096)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/main.o -MD)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6252B536)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x633728E7)
 I (..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h)(0x633728E3)
@@ -707,12 +707,13 @@ I (..\..\ITS_BRD_LIB\Utilities\AddFonts\fontsFLASH.h)(0x633728E3)
 I (..\..\DisplayWaveshare\Inc\LCD_Touch.h)(0x633728E3)
 I (..\..\ITS_BRD_LIB\Inc\error.h)(0x633728E3)
 I (..\..\ITS_BRD_LIB\Inc\timer.h)(0x633728E3)
-I (Inc\init_reset.h)(0x64350575)
-I (Inc\fetch_update.h)(0x642FD29F)
-I (Inc\errorhandling.h)(0x643505B8)
-I (Inc\output.h)(0x6435093F)
-F (.\Src\init_reset.c)(0x643509D6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/init_reset.o -MD)
-I (Inc\init_reset.h)(0x64350575)
+I (Inc\init_reset.h)(0x643E8096)
+I (Inc\fetch_update.h)(0x643E8096)
+I (Inc\errorhandling.h)(0x643E8096)
+I (Inc\output.h)(0x643E8096)
+F (.\Src\init_reset.c)(0x643E8096)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/init_reset.o -MD)
+I (Inc\init_reset.h)(0x643E8096)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252B538)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6252B536)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x633728E7)
 I (..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h)(0x633728E3)
@@ -721,7 +722,6 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x633
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x633728E4)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252B538)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x633728E4)
@@ -771,14 +771,14 @@ I (..\..\ITS_BRD_LIB\Utilities\AddFonts\fontsFLASH.h)(0x633728E3)
 I (..\..\DisplayWaveshare\Inc\LCD_Touch.h)(0x633728E3)
 I (..\..\ITS_BRD_LIB\Inc\error.h)(0x633728E3)
 I (..\..\ITS_BRD_LIB\Inc\timer.h)(0x633728E3)
-I (Inc\fetch_update.h)(0x642FD29F)
-I (Inc\output.h)(0x6435093F)
-I (Inc\errorhandling.h)(0x643505B8)
-F (.\Src\errorhandling.c)(0x643D48EF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/errorhandling.o -MD)
-I (Inc\errorhandling.h)(0x643505B8)
+I (Inc\fetch_update.h)(0x643E8096)
+I (Inc\output.h)(0x643E8096)
+I (Inc\errorhandling.h)(0x643E8096)
+F (.\Src\errorhandling.c)(0x643E8096)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/errorhandling.o -MD)
+I (Inc\errorhandling.h)(0x643E8096)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252B538)
 I (..\..\ITS_BRD_LIB\Inc\lcd.h)(0x633728E3)
 I (..\..\DisplayWaveshare\Inc\LCD_general.h)(0x633728E3)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252B538)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x633728E7)
 I (..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h)(0x633728E3)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x633728E7)
@@ -823,12 +823,13 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x633
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x633728E8)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x633728E8)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x633728E8)
-I (Inc\init_reset.h)(0x64350575)
+I (Inc\init_reset.h)(0x643E8096)
 I (..\..\DisplayWaveshare\Inc\LCD_GUI.h)(0x633728E3)
 I (..\..\stm32cubef4\Utilities\Fonts\fonts.h)(0x633728EB)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x6252B536)
-F (.\Src\output.c)(0x643D5BE9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/output.o -MD)
-I (Inc\output.h)(0x6435093F)
+F (.\Src\output.c)(0x643E8096)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/output.o -MD)
+I (Inc\output.h)(0x643E8096)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252B538)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x633728E7)
 I (..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h)(0x633728E3)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x633728E7)
@@ -836,7 +837,6 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x633
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x633728E4)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252B538)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x633728E4)
@@ -874,16 +874,17 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x633
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x633728E8)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x633728E8)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x633728E8)
-I (Inc\fetch_update.h)(0x642FD29F)
+I (Inc\fetch_update.h)(0x643E8096)
 I (..\..\ITS_BRD_LIB\Inc\lcd.h)(0x633728E3)
 I (..\..\DisplayWaveshare\Inc\LCD_general.h)(0x633728E3)
 I (..\..\DisplayWaveshare\Inc\LCD_GUI.h)(0x633728E3)
 I (..\..\stm32cubef4\Utilities\Fonts\fonts.h)(0x633728EB)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x6252B536)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x6252B536)
-I (Inc\errorhandling.h)(0x643505B8)
-F (.\Src\fetch_update.c)(0x6437EA32)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/fetch_update.o -MD)
-I (Inc\fetch_update.h)(0x642FD29F)
+I (Inc\errorhandling.h)(0x643E8096)
+F (.\Src\fetch_update.c)(0x643E8096)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/fetch_update.o -MD)
+I (Inc\fetch_update.h)(0x643E8096)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252B538)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x633728E7)
 I (..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h)(0x633728E3)
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h)(0x633728E7)
@@ -891,7 +892,6 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h)(0x633
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h)(0x633728E4)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252B538)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h)(0x633728E4)
 I (..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h)(0x633728E4)
@@ -931,7 +931,7 @@ I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h)(0x63
 I (..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h)(0x633728E8)
 I (..\..\ITS_BRD_LIB\Inc\lcd.h)(0x633728E3)
 I (..\..\DisplayWaveshare\Inc\LCD_general.h)(0x633728E3)
-I (Inc\errorhandling.h)(0x643505B8)
+I (Inc\errorhandling.h)(0x643E8096)
 F (../../stm32cubef4/Utilities/Fonts/font8.c)(0x633728EB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../../stm32cubef4/Drivers/CMSIS/Include -I ../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc -I ../../stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144 -I ../../stm32cubef4/Utilities/Fonts -I ../../DisplayWaveshare/Inc -I ../../ITS_BRD_LIB/Inc -I ../../ITS_BRD_LIB/Utilities/AddFonts-I./RTE/_ITSboard-IC:/Users/rumar/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/rumar/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F429xx -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DUSE_STM32F4XX_NUCLEO_144-o ./itsboard/font8.o -MD)
 I (..\..\stm32cubef4\Utilities\Fonts\fonts.h)(0x633728EB)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6252B538)
@@ -1718,8 +1718,8 @@ I (..\..\ITS_BRD_LIB\Inc\ITS_BRD_conf.h)(0x633728E3)
 I (RTE\_ITSboard\RTE_Components.h)(0x642D3142)
 I (..\..\ITS_BRD_LIB\Inc\RTE_Device.h)(0x633728E3)
 F (..\..\ITS_BRD_LIB\Inc\lcd.h)(0x633728E3)()
-F (.\Inc\init_reset.h)(0x64350575)()
-F (.\Inc\errorhandling.h)(0x643505B8)()
-F (.\Inc\output.h)(0x6435093F)()
-F (.\Inc\fetch_update.h)(0x642FD29F)()
+F (.\Inc\init_reset.h)(0x643E8096)()
+F (.\Inc\errorhandling.h)(0x643E8096)()
+F (.\Inc\output.h)(0x643E8096)()
+F (.\Inc\fetch_update.h)(0x643E8096)()
 F (.\main.s)(0x633728E3)()

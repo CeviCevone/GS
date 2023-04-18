@@ -24,6 +24,7 @@
 #include "fetch_update.h"
 #include "errorhandling.h"
 #include "output.h"
+#include <stdint.h> 
 
 #define S7 1<<7
 #define TICKS_PER_SECOND 90000000
@@ -39,18 +40,18 @@ int main(void){
 	
 	init();  
 	
-	int phase = 0; 
-	int currentState = 0;
-	int angVel = 0;
-	unsigned int time = 0;
-	int angle = 0; 
-	int buttons = 0; 
+	int32_t phase = 0; 
+	int32_t currentState = 0;
+	int32_t angVel = 0;
+	uint32_t time = 0;
+	int32_t angle = 0; 
+	int32_t buttons = 0; 
 
 	while(1)
 	{	
 		//daten Auslesen
 		//GPIOE->BSRR = D20; 
-		fetch(&time,&currentState, &buttons); // 750 ns 
+		fetch(&time,&currentState,&buttons); // 750 ns 
 		//GPIOE->BSRR = D20 << 16;
 		//zustände ändern
 		

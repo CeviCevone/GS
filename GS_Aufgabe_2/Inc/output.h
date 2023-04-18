@@ -1,10 +1,10 @@
 #ifndef __output__
 #define __output__
+#include <stdint.h>
 
-
-int setDirectionalLed(int phase);
-int printTicks(void);
-int printValues(int angle, int angVel);
-int initDisplay(void);
+int32_t setDirectionalLed(int32_t phase);
+int32_t printTicks(void);
+int32_t printValues(int32_t angle, int32_t angVel);
+int32_t initDisplay(void);
 
 #endif
