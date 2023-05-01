@@ -1,5 +1,5 @@
-#ifndef _BASICCHECKS_H
-#define _BASICCHECKS_H
+#ifndef _BASIC_CHECKS_H
+#define _BASIC_CHECKS_H
 
 #include "BMP_types.h"
 #include "errorhandler.h"

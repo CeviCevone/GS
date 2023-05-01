@@ -1,4 +1,4 @@
-#include "basicChecks.h"
+#include "basic_checks.h"
 
 // Basis checks of BMF headers
 
