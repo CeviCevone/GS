@@ -10,19 +10,19 @@
 
 static BITMAPFILEHEADER fileHeader; 
 static BITMAPINFOHEADER infoHeader; 
-static RGBQUAD bitmap[256];
+static RGBQUAD colorTable[256];
 
 int toSmallRGB(uint8_t red, uint8_t green, uint8_t blue, uint16_t* color);
 int decodeFileHeader(void);
 int decodeInfoHeader(void);
-int fillBitmap(void);
+int fillColorTable(void);
 int printAllPixels(void);
 
 int decodeAndPrint()
 {
 	decodeFileHeader();
 	decodeInfoHeader();
-	fillBitmap();
+	fillColorTable();
 	printAllPixels();
 	return 0; 
 }
@@ -41,17 +41,24 @@ int decodeInfoHeader(void)
 	return 0; 
 }
 
-int fillBitmap(void)
+int fillColorTable(void)
 {
-	if(infoHeader.biBitCount == 24)
+	if(24 == infoHeader.biBitCount)
 	{
 		return 0; 
 	}
 	else 
 	{
-		for(int i = 0; i < infoHeader.biSizeImage; ++i)
+		uint32_t numColors = infoHeader.biClrUsed;		
+		
+		if(0 == infoHeader.biClrUsed)
 		{
-			ERROR_HANDLER( 1 != COMread((char*) &bitmap[i], sizeof(RGBQUAD),1), "readTable: Error during read."); 
+			numColors = 256; 
+		}
+		
+		for(int i = 0; i < numColors; ++i)
+		{
+			ERROR_HANDLER( 1 != COMread((char*) &colorTable[i], sizeof(RGBQUAD),1), "readTable: Error during read."); 
 		}
 	}
 	return 0; 
@@ -59,26 +66,23 @@ int fillBitmap(void)
 
 int printAllPixels(void)
 {
-	uint16_t y = 0; 
+	uint16_t y = LCD_HEIGHT-1; 
 	uint16_t x = 0; 
 	uint16_t color = 0; 
 	
 	if(infoHeader.biBitCount == 24) //holt die 3 Byte pixel 
 	{
-		for(int i = 0; i < infoHeader.biSizeImage; ++i)
+		uint32_t numPixelPerRow = infoHeader.biWidth;
+		RGBTRIPLE tempPixel; 
+		for(int i = 0; i < (infoHeader.biWidth * infoHeader.biHeight); ++i)
 		{
-			RGBTRIPLE tempPixel; 
 			ERROR_HANDLER( 1 != COMread((char*) &tempPixel, sizeof(RGBTRIPLE),1), "getNextPixel: Error during read."); //holt einen Pixel mit Farbinfo
 			toSmallRGB(tempPixel.rgbtRed,tempPixel.rgbtGreen,tempPixel.rgbtBlue,&color); //konvertiert 24bit rgb zu 16bit 
-			if(x == infoHeader.biWidth) //wenn die max zeilenlänge erreicht ist -> neue zeile
+			printPixel(x,y,color); //druckt aktuellen pixel
+			if(x == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
 			{
-				while(x != (((LCD_WIDTH)*(sizeof(PRGBTRIPLE)*8) +31)/32*4)) //füllt mit padding Bytes auf 
-				{
-					printPixel(x,y,WHITE);
-					++x; 
-				}
 				x = 0; 
-				++y;
+				--y;
 			}
 			printPixel(x,y,color); //druckt aktuellen pixel
 			++x;
@@ -86,20 +90,16 @@ int printAllPixels(void)
 	}
 	else //holt 8 bit pixel
 	{
-		RGBQUAD temPixel; 
-		for(int i = 0; i < infoHeader.biSizeImage; ++i)
+		RGBQUAD temPixel;
+		uint32_t numPixelPerRow = infoHeader.biWidth;
+		for(int i = 0; i < (infoHeader.biWidth * infoHeader.biHeight); ++i)
 		{
-			temPixel = bitmap[nextChar()]; //holt die farbinfo für den Pixel 
+			temPixel = colorTable[nextChar()]; //holt die farbinfo für den Pixel 
 			toSmallRGB(temPixel.rgbRed, temPixel.rgbGreen, temPixel.rgbBlue, &color); //konvertiert 24bit rgb zu 16bit
-			if(x == infoHeader.biWidth) //wenn die max zeilenlänge erreicht ist -> neue zeile
+			if(x == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
 			{
-				while(x != (((LCD_WIDTH)*(sizeof(PRGBTRIPLE)*8) +31)/32*4)) //füllt mit padding Bytes auf 
-				{
-					printPixel(x,y,WHITE);
-					++x; 
-				}
 				x = 0; 
-				++y;
+				--y;
 			}
 			printPixel(x,y,color); //druckt aktuellen pixel
 			++x;
@@ -108,7 +108,7 @@ int printAllPixels(void)
 	return 0; 
 }
 
-int toSmallRGB(uint8_t red, uint8_t green, uint8_t blue, uint16_t* color)
+int toSmallRGB(uint8_t red, uint8_t green, uint8_t blue, uint16_t* color) //wandelt 24 bit rgb zu 16 bit rgb um 
 {
 	red = red >> 3; 
 	green = green >> 2; 
