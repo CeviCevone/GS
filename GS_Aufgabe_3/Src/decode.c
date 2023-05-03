@@ -84,7 +84,6 @@ int printAllPixels(void)
 				x = 0; 
 				--y;
 			}
-			printPixel(x,y,color); //druckt aktuellen pixel
 			++x;
 		}
 	}
@@ -96,12 +95,12 @@ int printAllPixels(void)
 		{
 			temPixel = colorTable[nextChar()]; //holt die farbinfo für den Pixel 
 			toSmallRGB(temPixel.rgbRed, temPixel.rgbGreen, temPixel.rgbBlue, &color); //konvertiert 24bit rgb zu 16bit
+			printPixel(x,y,color); //druckt aktuellen pixel
 			if(x == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
 			{
 				x = 0; 
 				--y;
 			}
-			printPixel(x,y,color); //druckt aktuellen pixel
 			++x;
 		}
 	}
