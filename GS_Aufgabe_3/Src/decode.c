@@ -77,7 +77,7 @@ int printAllPixels(void)
 	{
 		uncompressed8bit();
 	}
-	else if((8 == infoHeader.biBitCount) && (0 == infoHeader.biCompression))
+	else if((8 == infoHeader.biBitCount) && (1 == infoHeader.biCompression))
 	{
 		compressed8bit();
 	}
@@ -210,7 +210,9 @@ int compressed8bit(void)
 					}
 				}
 		}
-			--y; 
+		--y; 
+		x = 0; 
+		endline = 0; 
 	}
 	return 0; 
 }
