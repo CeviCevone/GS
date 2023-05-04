@@ -17,7 +17,10 @@ int decodeFileHeader(void);
 int decodeInfoHeader(void);
 int fillColorTable(void);
 int printAllPixels(void);
-
+int compressed8bit(void);
+int uncompressed8bit(void);
+int uncompressed24bit(void);
+	
 int decodeAndPrint()
 {
 	decodeFileHeader();
@@ -66,13 +69,28 @@ int fillColorTable(void)
 
 int printAllPixels(void)
 {
+	if((24 == infoHeader.biBitCount)) //holt die 3 Byte pixel 
+	{
+		uncompressed24bit();
+	}
+	else if((8 == infoHeader.biBitCount) && (0 == infoHeader.biCompression))
+	{
+		uncompressed8bit();
+	}
+	else if((8 == infoHeader.biBitCount) && (0 == infoHeader.biCompression))
+	{
+		compressed8bit();
+	}
+	return 0; 
+}
+
+int uncompressed24bit(void)
+{
 	uint16_t y = LCD_HEIGHT-1; 
 	uint16_t x = 0; 
-	uint16_t color = 0; 
-	
-	if(infoHeader.biBitCount == 24) //holt die 3 Byte pixel 
-	{
-		uint32_t numPixelPerRow = infoHeader.biWidth;
+	uint16_t color = 0;
+
+	uint32_t numPixelPerRow = infoHeader.biWidth;
 		RGBTRIPLE tempPixel; 
 		for(int i = 0; i < (infoHeader.biWidth * infoHeader.biHeight); ++i)
 		{
@@ -86,10 +104,16 @@ int printAllPixels(void)
 			}
 			++x;
 		}
-	}
-	else //holt 8 bit pixel
-	{
-		RGBQUAD temPixel;
+	return 0; 
+}
+
+int uncompressed8bit(void)
+{
+	uint16_t y = LCD_HEIGHT-1; 
+	uint16_t x = 0; 
+	uint16_t color = 0; 
+	
+	RGBQUAD temPixel;
 		uint32_t numPixelPerRow = infoHeader.biWidth;
 		for(int i = 0; i < (infoHeader.biWidth * infoHeader.biHeight); ++i)
 		{
@@ -103,10 +127,74 @@ int printAllPixels(void)
 			}
 			++x;
 		}
+	return 0;
+}
+
+int compressed8bit(void)
+{
+	int endOfBitmap = 0; 
+	int endline = 0; 
+	uint8_t byte = 0;
+	uint16_t y = LCD_HEIGHT-1; 
+	uint16_t x = 0; 
+	RGBQUAD pixel;
+	uint16_t color = 0; 
+	
+	while(!endOfBitmap)
+	{
+		while(!endline)
+		{
+			byte = nextChar();  //erstes byte
+		
+			if(0 == byte)
+			{
+				byte = nextChar();  //zweites byte 
+				
+				switch(byte)
+				{
+					case 1 : 
+						endOfBitmap = 1;  //00 01 -> ende des Bildes
+					case 0 : 
+						endline = 1;  		//00 00 -> ende der zeile 
+						break; 
+					case 2 : 
+						x += nextChar();	//00 02 -> verschiebung um die nächstes byte nach x und übernächstes nach y 
+						y -= nextChar(); 
+						break; 
+					default:  					//00 03/FF -> 03/FF nächste bytes als unkomprimiert interpretieren
+						for(int i = 0; i < byte; ++i)
+						{
+							pixel = colorTable[nextChar()]; //holt die farbinfo für den Pixel  
+							toSmallRGB(pixel.rgbRed, pixel.rgbGreen, pixel.rgbBlue, &color); //konvertiert 24bit rgb zu 16bit
+							printPixel(x,y,color); //druckt aktuellen pixel
+							++x; 
+						}
+						
+						if(0 != (byte % 2))
+						{
+							nextChar(); 
+						}
+					}
+				}
+				else // 01/FF -> 01/FF mal ein pixel mit der farbe auf die das nächste byte verweist   
+				{
+					pixel = colorTable[nextChar()]; //holt die farbinfo für den Pixel  
+					
+					for(int i = 0; i < byte; ++i)
+					{
+						toSmallRGB(pixel.rgbRed, pixel.rgbGreen, pixel.rgbBlue, &color); //konvertiert 24bit rgb zu 16bit
+						printPixel(x,y,color); //druckt aktuellen pixel
+						++x; 
+					}
+				}
+		}
+			--y; 
 	}
 	return 0; 
 }
-
+							
+							
+		
 int toSmallRGB(uint8_t red, uint8_t green, uint8_t blue, uint16_t* color) //wandelt 24 bit rgb zu 16 bit rgb um 
 {
 	red = red >> 3; 
