@@ -97,12 +97,23 @@ int uncompressed24bit(void)
 			ERROR_HANDLER( 1 != COMread((char*) &tempPixel, sizeof(RGBTRIPLE),1), "getNextPixel: Error during read."); //holt einen Pixel mit Farbinfo
 			toSmallRGB(tempPixel.rgbtRed,tempPixel.rgbtGreen,tempPixel.rgbtBlue,&color); //konvertiert 24bit rgb zu 16bit 
 			printPixel(x,y,color); //druckt aktuellen pixel
-			if(x == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
+			if(x + 1 == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
 			{
+				uint16_t bytesPerRow = (x+1)*3; 
+				
+				while(bytesPerRow < ((((infoHeader.biWidth)*(24) + 31) / 32) * 4))
+				{
+					nextChar(); 
+					++bytesPerRow; 
+				}
+				
 				x = 0; 
 				--y;
 			}
-			++x;
+			else 
+			{
+				++x;
+			}
 		}
 	return 0; 
 }
@@ -120,12 +131,23 @@ int uncompressed8bit(void)
 			temPixel = colorTable[nextChar()]; //holt die farbinfo für den Pixel 
 			toSmallRGB(temPixel.rgbRed, temPixel.rgbGreen, temPixel.rgbBlue, &color); //konvertiert 24bit rgb zu 16bit
 			printPixel(x,y,color); //druckt aktuellen pixel
-			if(x == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
-			{
+			if(x + 1 == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
+			{	
+				uint16_t bytesPerRow = (x+1); 
+				
+				while(bytesPerRow < ((((infoHeader.biWidth)*(8) + 31) / 32) * 4))
+				{
+					nextChar(); 
+					++bytesPerRow; 
+				}
+				
 				x = 0; 
 				--y;
 			}
-			++x;
+			else 
+			{
+				++x;
+			}
 		}
 	return 0;
 }
