@@ -3,7 +3,11 @@
 #include "input.h"
 #include "errorhandler.h"
 #include "lcd.h"
+#include "stm32f4xx_hal.h"
 
+#define TRUE 1
+#define FALSE 0 
+#define S7 1 << 7 
 
 #define HELLO_IN_CMD			'H'  // Hello cmd send from Python program until our programs answers with READY 
 #define READY_OUT_CMD 		'R'  // Ready cmd send to Phyton program 
@@ -98,5 +102,24 @@ int COMread(char* buf, unsigned int size, unsigned int count){
 	 }
 	 return count;
 }
+
+/**
+* @brief  this function check if the button S6 is pressed
+* @param  buttonPressed the vessel returning TRUE if S7 is pressed or FALSE if not
+* @retval 0 
+*/
+int checkButton(uint8_t* buttonPressed)
+{
+	if(S7 & GPIOF->IDR)
+	{
+		*buttonPressed = FALSE; 
+	}
+	else 
+	{
+		*buttonPressed = TRUE; 
+	}
+	return 0; 
+}
+	
 
 //EOF

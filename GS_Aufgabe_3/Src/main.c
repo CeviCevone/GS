@@ -27,6 +27,8 @@
 #include "MS_basetypes.h"
 
 #define TRUE 1
+#define FALSE 0
+
 
 /**
   * @brief  Main program
@@ -44,11 +46,23 @@ int main(void){
 	}
 	initInput();
 	
-	//while(TRUE)
-	//{
-		openNextFile(); //an taster binden 
-		decodeAndPrint();
-	//}
+	openNextFile();  
+	decodeAndPrint();
+	
+	uint8_t buttonPressed = FALSE; 
+	
+	while(TRUE)
+	{
+		checkButton(&buttonPressed); 
+		
+		if(buttonPressed)
+		{
+			GUI_clear(WHITE); 
+			openNextFile(); 
+			decodeAndPrint();
+		}
+	}
+	
 }
-
+	
 // EOF

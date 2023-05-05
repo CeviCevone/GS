@@ -1,6 +1,8 @@
 #ifndef _INPUT_H
 #define _INPUT_H
 
+#include <stdint.h>
+
 /**
 * @brief This function setups communication protocol to Python send file program
 * @param None
@@ -34,6 +36,13 @@ extern int nextChar(void);
 * @retval Number of items read. If not enough data are available, EOF will be returned.
 */
 extern int COMread(char*, unsigned int size, unsigned int count);
+
+/**
+* @brief  this function check if the button S6 is pressed
+* @param  buttonPressed the vessel returning TRUE if S7 is pressed or FALSE if not
+* @retval 0 
+*/
+int checkButton(uint8_t* buttonPressed);
 
 #endif
 // EOF
