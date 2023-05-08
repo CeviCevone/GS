@@ -7,10 +7,12 @@
 #include "MS_basetypes.h"
 #include "LCD_general.h"
 #include <stdio.h>
+#include <stdlib.h> 
 
 static BITMAPFILEHEADER fileHeader; 
 static BITMAPINFOHEADER infoHeader; 
 static RGBQUAD colorTable[256];
+static COLOR *colors; 
 
 int toSmallRGB(uint8_t red, uint8_t green, uint8_t blue, uint16_t* color);
 int decodeFileHeader(void);
@@ -20,6 +22,7 @@ int printAllPixels(void);
 int compressed8bit(void);
 int uncompressed8bit(void);
 int uncompressed24bit(void);
+int addToArr(uint16_t x, COLOR color);
 	
 int decodeAndPrint()
 {
@@ -27,6 +30,8 @@ int decodeAndPrint()
 	decodeInfoHeader();
 	fillColorTable();
 	printAllPixels();
+	free(colors); 
+	colors = NULL; 
 	return 0; 
 }
 
@@ -41,6 +46,7 @@ int decodeInfoHeader(void)
 {
 	ERROR_HANDLER(1!= COMread((char *) &infoHeader, sizeof(BITMAPINFOHEADER), 1), "readHeaders: Error during read.");
 	basicChecks(NULL, &infoHeader); 
+	ERROR_HANDLER(infoHeader.biWidth > 2000, "readHeaders: Picture too wide"); 	
 	return 0; 
 }
 
@@ -69,6 +75,8 @@ int fillColorTable(void)
 
 int printAllPixels(void)
 {
+	colors = (COLOR *)malloc(infoHeader.biWidth * sizeof(COLOR));
+	
 	if((24 == infoHeader.biBitCount)) //holt die 3 Byte pixel 
 	{
 		uncompressed24bit();
@@ -96,12 +104,14 @@ int uncompressed24bit(void)
 		{
 			ERROR_HANDLER( 1 != COMread((char*) &tempPixel, sizeof(RGBTRIPLE),1), "getNextPixel: Error during read."); //holt einen Pixel mit Farbinfo
 			toSmallRGB(tempPixel.rgbtRed,tempPixel.rgbtGreen,tempPixel.rgbtBlue,&color); //konvertiert 24bit rgb zu 16bit 
-			printPixel(x,y,color); //druckt aktuellen pixel
+			addToArr(x, color);
 			if(x + 1 == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
 			{
+				printLine(y, 480, colors); // drucke zeile
+						
 				uint16_t bytesPerRow = (x+1)*3; 
 				
-				while(bytesPerRow < ((((infoHeader.biWidth)*(24) + 31) / 32) * 4))
+				while(bytesPerRow < ((((infoHeader.biWidth)*(24) + 31) / 32) * 4)) //padding bytes ueberspringen 
 				{
 					nextChar(); 
 					++bytesPerRow; 
@@ -130,9 +140,11 @@ int uncompressed8bit(void)
 		{
 			temPixel = colorTable[nextChar()]; //holt die farbinfo für den Pixel 
 			toSmallRGB(temPixel.rgbRed, temPixel.rgbGreen, temPixel.rgbBlue, &color); //konvertiert 24bit rgb zu 16bit
-			printPixel(x,y,color); //druckt aktuellen pixel
+			addToArr(x, color);
 			if(x + 1 == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
 			{	
+				printLine(y, 480, colors);
+				
 				uint16_t bytesPerRow = (x+1); 
 				
 				while(bytesPerRow < ((((infoHeader.biWidth)*(8) + 31) / 32) * 4))
@@ -161,6 +173,7 @@ int compressed8bit(void)
 	uint16_t x = 0; 
 	RGBQUAD pixel;
 	uint16_t color = 0; 
+	uint16_t oldy = 0; 
 	
 	while(!endOfBitmap)
 	{
@@ -179,16 +192,22 @@ int compressed8bit(void)
 					case 0 : 
 						endline = 1;  		//00 00 -> ende der zeile 
 						break; 
-					case 2 : 
+					case 2 :  
+						oldy = y; 
 						x += nextChar();	//00 02 -> verschiebung um die nächstes byte nach x und übernächstes nach y 
-						y -= nextChar(); 
+						y -= nextChar();
+						
+						if(oldy != y)			//Wenn eine neue zeile begonnen wurde, 
+						{
+							printLine(oldy, 480, colors);
+						}
 						break; 
-					default:  					//00 03/FF -> 03/FF nächste bytes als unkomprimiert interpretieren
+					default: 						//00 03/FF -> 03/FF nächste bytes als unkomprimiert interpretieren
 						for(int i = 0; i < byte; ++i)
 						{
 							pixel = colorTable[nextChar()]; //holt die farbinfo für den Pixel  
 							toSmallRGB(pixel.rgbRed, pixel.rgbGreen, pixel.rgbBlue, &color); //konvertiert 24bit rgb zu 16bit
-							printPixel(x,y,color); //druckt aktuellen pixel
+							addToArr(x, color); //druckt aktuellen pixel
 							++x; 
 						}
 						
@@ -205,11 +224,18 @@ int compressed8bit(void)
 					for(int i = 0; i < byte; ++i)
 					{
 						toSmallRGB(pixel.rgbRed, pixel.rgbGreen, pixel.rgbBlue, &color); //konvertiert 24bit rgb zu 16bit
-						printPixel(x,y,color); //druckt aktuellen pixel
+						addToArr(x, color); //druckt aktuellen pixel
 						++x; 
 					}
 				}
 		}
+		printLine(y, 480, colors);
+		
+		for(int i = 0; i < infoHeader.biWidth; ++i)
+		{
+			colors[i] = WHITE; 
+		}
+		
 		--y; 
 		x = 0; 
 		endline = 0; 
@@ -227,6 +253,12 @@ int toSmallRGB(uint8_t red, uint8_t green, uint8_t blue, uint16_t* color) //wand
 	
 	*color = ((red << 11) | (green << 5) | blue); 
 	
+	return 0; 
+}
+
+int addToArr(uint16_t x, COLOR color)
+{
+	colors [x] = color; 
 	return 0; 
 }
 	

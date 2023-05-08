@@ -4,4 +4,5 @@
   ..\..\DisplayWaveshare\Inc\LCD_general.h \
   ..\..\stm32cubef4\Utilities\Fonts\fonts.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h Inc\basic_checks.h \
-  Inc\errorhandler.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h
+  Inc\errorhandler.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h
