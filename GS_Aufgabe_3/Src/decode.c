@@ -21,11 +21,13 @@
 #define FALSE 0
 #define START_OF_LINE 0
 #define BYTES_PER_24BIT 3
+#define ERROR 1
 
 static BITMAPFILEHEADER fileHeader; 
 static BITMAPINFOHEADER infoHeader; 
 static RGBQUAD colorTable[MAX_NUM_COLORS];
 static COLOR* colors; 
+static uint16_t arrlen = 0; //anzahl der zu druckenden pixel im array 
 
 uint32_t toSmallRGB(uint8_t red, uint8_t green, uint8_t blue, uint16_t* color);
 uint32_t decodeFileHeader(void);
@@ -116,6 +118,15 @@ uint32_t printAllPixels(void)
 {
 	colors = (COLOR *)malloc(infoHeader.biWidth * sizeof(COLOR));
 	
+	if(infoHeader.biWidth > LCD_WIDTH)
+	{
+		arrlen = LCD_WIDTH; 
+	}
+	else 
+	{
+		arrlen = infoHeader.biWidth; 
+	}
+	
 	if((BMP_UNCOMPRESSED_24BIT == infoHeader.biBitCount)) //holt die 3 Byte pixel 
 	{
 		uncompressed24bit();
@@ -152,7 +163,7 @@ uint32_t uncompressed24bit(void)
 			addToArr(x, color);
 			if(x + 1 == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
 			{
-				printLine(y, LCD_WIDTH, colors); // drucke zeile
+				printLine(y, arrlen, colors); // drucke zeile
 						
 				uint16_t bytesPerRow = (x+1)*BYTES_PER_24BIT; 
 				
@@ -194,7 +205,7 @@ uint32_t uncompressed8bit(void)
 			addToArr(x, color);
 			if(x + 1 == numPixelPerRow) //wenn die max zeilenlänge erreicht ist -> neue zeile
 			{	
-				printLine(y, LCD_WIDTH, colors);
+				printLine(y, arrlen, colors);
 				
 				uint16_t bytesPerRow = (x+1); 
 				
@@ -255,7 +266,7 @@ uint32_t compressed8bit(void)
 						
 						if(oldy != y)			//Wenn eine neue zeile begonnen wurde, drucke zeile
 						{
-							printLine(oldy, LCD_WIDTH, colors);
+							printLine(oldy, arrlen, colors);
 						}
 						break; 
 					default: 						//00 03/FF -> 03/FF nächste bytes als unkomprimiert interpretieren
@@ -285,7 +296,7 @@ uint32_t compressed8bit(void)
 					}
 				}
 		}
-		printLine(y, LCD_WIDTH, colors);
+		printLine(y, arrlen, colors);
 		
 		for(int i = 0; i < infoHeader.biWidth; ++i)
 		{
