@@ -38,11 +38,11 @@ extern int nextChar(void);
 extern int COMread(char*, unsigned int size, unsigned int count);
 
 /**
-* @brief  this function check if the button S6 is pressed
+* @brief  this function checks if the button S6 is pressed
 * @param  buttonPressed the vessel returning TRUE if S7 is pressed or FALSE if not
 * @retval 0 
 */
-int checkButton(uint8_t* buttonPressed);
+uint32_t checkButton(uint8_t* buttonPressed);
 
 #endif
 // EOF

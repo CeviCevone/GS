@@ -25,6 +25,7 @@
 #include "basic_checks.h"
 #include "errorhandler.h"
 #include "MS_basetypes.h"
+#include "output.h"
 
 #define TRUE 1
 #define FALSE 0
@@ -44,22 +45,23 @@ int main(void){
 	    // Ueberpruefe Version der Fonts im Flash passt nicht zur Software Version
 		Error_Handler();
 	}
-	initInput();
 	
-	openNextFile();  
-	decodeAndPrint();
+	initInput();	//stelle verbidung her 	
+	
+	openNextFile();  	//holt naeste bmp datei
+	decodeAndPrint(); //decodiert und druckt das bild
 	
 	uint8_t buttonPressed = FALSE; 
 	
-	while(TRUE)
+	while(TRUE) //superloop
 	{
-		checkButton(&buttonPressed); 
+		checkButton(&buttonPressed); //prueft, ob S7 gedrueckt wurde 
 		
-		if(buttonPressed)
+		if(buttonPressed) //wenn S7 gedrueckt -> 
 		{
-			GUI_clear(WHITE); 
-			openNextFile(); 
-			decodeAndPrint();
+			resetLCD(); 			//setzt bildschirm zurück 
+			openNextFile(); 	//holt naeste bmp datei
+			decodeAndPrint(); //decodiert und druckt das bild
 		}
 	}
 	
