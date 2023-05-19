@@ -25,6 +25,7 @@
 #include "fontsFLASH.h"
 #include "LCD_Touch.h"
 #include "error.h"
+#include "input_output.h"
 
 /**
   * @brief  Main program
@@ -40,15 +41,14 @@ int main(void){
 		Error_Handler();
 	}
 	
-	lcdPrintS("Viel Spass mit dem ITS Board.");
-	printf("Viel Spass mit dem ITS Board.\r\n");
-	delay(3000);
+	uint8_t famCode = 0; 
+	uint8_t serialNumber[6] = {0}; 
+	uint8_t crc = 0; 
 	
-	// Demo Drawing Board
-	TP_Dialog();//initialize the drawing board
-	while (1) { 
-		TP_DrawBoard(); 
-	}
+	readRom(&famCode, serialNumber, &crc);
+	
+	lcdPrintInt(famCode); 
+	
 }
 
 // EOF

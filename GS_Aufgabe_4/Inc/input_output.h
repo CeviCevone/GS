@@ -5,5 +5,6 @@
 
 uint32_t pinInput(void);
 uint32_t pinOutput(void);
+uint32_t readRom(uint8_t* famCode, uint8_t* serialNumber, uint8_t* crc);
 
 #endif

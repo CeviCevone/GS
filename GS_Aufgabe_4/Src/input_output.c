@@ -1,6 +1,6 @@
 #include "input_output.h"
 #include <stdint.h>
-#include "stm32f4xx_hal_gpio.h"
+#include "stm32f4xx_hal.h"
 #include "time.h"
 
 
@@ -63,15 +63,19 @@ uint32_t writeNull(void)
 	return 0;
 }	
 	
-
-uint32_t readBit(uint8_t* var)
+//liest byte aus 
+uint32_t readByte(uint8_t* var)
 {
-	pinLow();
-	wait(6); 
-	pinInput(); //bus freigeben ? 
-	wait(9);
-	var* = (GPIOD->IDR & GPIO_PIN_0); //pin D0 abfragen 
-	wait(55);
+	
+	for(int i = 0; i < 8; ++i)
+	{
+		pinLow();
+		wait(6); 
+		pinInput(); //bus freigeben ? 
+		wait(9);
+		*var |= (GPIOD->IDR & GPIO_PIN_0) << i; //pin D0 abfragen 
+		wait(55);
+	}
 	
 	return 0;
 }
@@ -85,6 +89,30 @@ uint32_t reset(void)
 	wait(70); 
 	var = (GPIOD->IDR & GPIO_PIN_0); //pin D0 abfragen ; wofür? 
 	wait(410); 
+	
+	return 0; 
+}
+
+uint32_t readRom(uint8_t* famCode, uint8_t* serialNumber, uint8_t* crc)
+{
+	reset(); 
+	
+	for(int i = 0; i < 2; ++i)
+	{
+		writeOne(); 
+		writeOne();
+		writeNull(); 
+		writeNull();
+	}
+	
+	readByte(famCode);
+	
+	for(int i = 0; i < 6; ++i)
+	{
+		readByte(&serialNumber[i]); 
+	}
+	
+	readByte(crc); 
 	
 	return 0; 
 }
