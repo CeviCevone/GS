@@ -1,5 +1,5 @@
-./itsboard/main.o: Src\main.c \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+./itsboard/gpio_basefunct.o: Src\gpio_basefunct.c Inc\gpio_basefunct.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\..\ITS_BRD_LIB\Inc\stm32f4xx_hal_conf.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -7,7 +7,6 @@
   ..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f429xx.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\core_cm4.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_version.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_compiler.h \
   ..\..\stm32cubef4\Drivers\CMSIS\Include\cmsis_armclang.h \
@@ -44,13 +43,4 @@
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h \
-  ..\..\ITS_BRD_LIB\Inc\init.h ..\..\ITS_BRD_LIB\Inc\delay.h \
-  ..\..\DisplayWaveshare\Inc\LCD_GUI.h \
-  ..\..\DisplayWaveshare\Inc\LCD_general.h \
-  ..\..\stm32cubef4\Utilities\Fonts\fonts.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  ..\..\DisplayWaveshare\Inc\LCD_Demos.h ..\..\ITS_BRD_LIB\Inc\lcd.h \
-  ..\..\ITS_BRD_LIB\Utilities\AddFonts\fontsFLASH.h \
-  ..\..\DisplayWaveshare\Inc\LCD_Touch.h ..\..\ITS_BRD_LIB\Inc\error.h \
-  Inc\one_wire.h
+  ..\..\stm32cubef4\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h

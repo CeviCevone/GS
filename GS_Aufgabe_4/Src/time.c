@@ -27,18 +27,16 @@ uint32_t getTime(uint32_t* time)
 
 uint32_t resetTime(void)
 {
-	TIM1->CNT = 0; 
+	TIM2->CNT = 0; 
 	return 0; 
 }
-
 
 uint32_t wait(uint32_t time)
 {
 	resetTime();
-	getTime(&time); 
 	do
 	{
-		deltaTime = TIM1->CNT - time; 
+		deltaTime = TIM2->CNT; 
 	}
 	while(time > deltaTime); // warte x micro sec
 	

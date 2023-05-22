@@ -25,7 +25,9 @@
 #include "fontsFLASH.h"
 #include "LCD_Touch.h"
 #include "error.h"
-#include "input_output.h"
+#include "one_wire.h"
+
+void demo(void); 
 
 /**
   * @brief  Main program
@@ -41,14 +43,25 @@ int main(void){
 		Error_Handler();
 	}
 	
-	uint8_t famCode = 0; 
-	uint8_t serialNumber[6] = {0}; 
-	uint8_t crc = 0; 
-	
-	readRom(&famCode, serialNumber, &crc);
-	
-	lcdPrintInt(famCode); 
-	
+	demo(); 
 }
 
+
+void demo(void)
+{
+	uint64_t rom = 0; 
+	readRom(&rom); 
+	
+	if(!checkCRC(rom,7))
+	{
+		Error_Handler(); 
+	}
+	
+	for(uint32_t i; i < 64; ++i)
+	{
+		lcdGotoXY(i,2); 
+		lcdPrintC(rom & (1 << i)); 
+	}
+}
+	
 // EOF

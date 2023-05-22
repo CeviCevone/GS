@@ -565,9 +565,14 @@
               <FilePath>.\Src\time.c</FilePath>
             </File>
             <File>
-              <FileName>input_output.c</FileName>
+              <FileName>gpio_basefunct.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Src\input_output.c</FilePath>
+              <FilePath>.\Src\gpio_basefunct.c</FilePath>
+            </File>
+            <File>
+              <FileName>one_wire.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\one_wire.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -825,9 +830,14 @@
               <FilePath>.\Inc\time.h</FilePath>
             </File>
             <File>
-              <FileName>input_output.h</FileName>
+              <FileName>gpio_basefunct.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Inc\input_output.h</FilePath>
+              <FilePath>.\Inc\gpio_basefunct.h</FilePath>
+            </File>
+            <File>
+              <FileName>one_wire.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\one_wire.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1542,9 +1552,14 @@
               <FilePath>.\Src\time.c</FilePath>
             </File>
             <File>
-              <FileName>input_output.c</FileName>
+              <FileName>gpio_basefunct.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Src\input_output.c</FilePath>
+              <FilePath>.\Src\gpio_basefunct.c</FilePath>
+            </File>
+            <File>
+              <FileName>one_wire.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\one_wire.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1802,9 +1817,14 @@
               <FilePath>.\Inc\time.h</FilePath>
             </File>
             <File>
-              <FileName>input_output.h</FileName>
+              <FileName>gpio_basefunct.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Inc\input_output.h</FilePath>
+              <FilePath>.\Inc\gpio_basefunct.h</FilePath>
+            </File>
+            <File>
+              <FileName>one_wire.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\one_wire.h</FilePath>
             </File>
           </Files>
         </Group>
