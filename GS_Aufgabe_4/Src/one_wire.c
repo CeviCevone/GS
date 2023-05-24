@@ -38,14 +38,18 @@ uint32_t read_bit(uint64_t* var, uint32_t shift)
 	wait(6); 
 	GPIO_High(); 
 	wait(9); 
+	GPIO_In();
 	GPIO_Read(var,shift);
 	wait(55);
+	GPIO_Out();
 	return OK; 
 }
 
 uint32_t readRom(uint64_t* var)
 {
 	io_reset(); 
+	
+	writeByte(0x33);
 	
 	for(uint32_t i = 0; i < 64; ++i)
 	{

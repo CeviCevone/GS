@@ -26,6 +26,9 @@
 #include "LCD_Touch.h"
 #include "error.h"
 #include "one_wire.h"
+#include "time.h"
+#include "timer.h"
+#include "gpio_basefunct.h"
 
 void demo(void); 
 
@@ -49,6 +52,9 @@ int main(void){
 
 void demo(void)
 {
+	initTimer(); 
+	init_GPIO(); 
+	
 	uint64_t rom = 0; 
 	readRom(&rom); 
 	

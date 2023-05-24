@@ -1,5 +1,6 @@
 #include "gpio_basefunct.h"
 #include "stm32f4xx_hal.h" 
+#include "lcd.h"
 
 #define PIN1 1 
 #define Pin0 0  
@@ -43,6 +44,17 @@ void GPIO_Low(void)
 
 void GPIO_Read(uint64_t *var, uint32_t shift)
 {
-	*var |= ((GPIOD->IDR & 0x01) << shift);
+	uint64_t temp = (GPIOD->IDR & 0x01); 
+	
+	if(temp)   //test
+	{
+		lcdPrintC('1');
+	}
+	else 
+	{
+		lcdPrintC('0'); 
+	}	//test ende 
+	
+	*var |= (temp << shift);
 }
 
