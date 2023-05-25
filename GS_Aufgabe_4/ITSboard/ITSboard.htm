@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\ITSboard\ITSboard.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\ITSboard\ITSboard.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Wed May 24 12:39:28 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Thu May 25 11:57:40 2023
 <BR><P>
 <H3>Maximum Stack Usage =        520 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -12,9 +12,9 @@ main &rArr; TP_Init &rArr; TP_Adjust &rArr; TP_ShowInfo &rArr; GUI_drawRectangle
 <H3>
 Mutually Recursive functions
 </H3> <LI><a href="#[1c]">ADC_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1c]">ADC_IRQHandler</a><BR>
- <LI><a href="#[94]">GUI_disStr</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8f]">GUI_disChar</a><BR>
- <LI><a href="#[92]">GUI_disNum</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[90]">printDebugMsg</a><BR>
- <LI><a href="#[e2]">USART_Control</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e2]">USART_Control</a><BR>
+ <LI><a href="#[92]">GUI_disStr</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8d]">GUI_disChar</a><BR>
+ <LI><a href="#[90]">GUI_disNum</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8e]">printDebugMsg</a><BR>
+ <LI><a href="#[e0]">USART_Control</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e0]">USART_Control</a><BR>
 </UL>
 <P>
 <H3>
@@ -146,7 +146,7 @@ Global Symbols
 <P><STRONG><a name="[66]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(.text)
 </UL>
-<P><STRONG><a name="[10e]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[10f]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[76]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -156,15 +156,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[10f]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[110]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[110]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[111]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[111]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[112]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[112]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[113]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[113]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[114]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f429xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
@@ -443,7 +443,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
+<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ldivmod
 </UL>
 
@@ -452,40 +452,40 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;itoa
+<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;itoa
 </UL>
 
-<P><STRONG><a name="[fc]"></a>abs</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, siabs.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
+<P><STRONG><a name="[fb]"></a>abs</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, siabs.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
 </UL>
 
-<P><STRONG><a name="[f6]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkCRC
+<P><STRONG><a name="[f4]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkCRC
 </UL>
 
-<P><STRONG><a name="[114]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[115]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[115]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[116]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
 <P><STRONG><a name="[7d]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[116]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[117]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[117]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[118]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[7c]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Initialize
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Initialize
 </UL>
 
-<P><STRONG><a name="[118]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[119]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[119]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[11a]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[7e]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -496,7 +496,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
+<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
 </UL>
 
 <P><STRONG><a name="[81]"></a>__aeabi_d2iz</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, dfixi.o(.text))
@@ -504,7 +504,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
+<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
 </UL>
 
 <P><STRONG><a name="[7a]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
@@ -512,7 +512,7 @@ Global Symbols
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[11a]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[11b]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[79]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
@@ -521,9 +521,9 @@ Global Symbols
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
 </UL>
 
-<P><STRONG><a name="[11b]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[11c]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
-<P><STRONG><a name="[11c]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[11d]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[82]"></a>_double_round</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, depilogue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _double_round
@@ -548,7 +548,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
 </UL>
 
 <P><STRONG><a name="[77]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
@@ -557,7 +557,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[11d]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[11e]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.BusFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
@@ -570,18 +570,18 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Reset
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Reset
 </UL>
 
-<P><STRONG><a name="[bd]"></a>Driver_Delay_us</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lcd_tools.o(.text.Driver_Delay_us))
+<P><STRONG><a name="[bb]"></a>Driver_Delay_us</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lcd_tools.o(.text.Driver_Delay_us))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Driver_Delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_Average
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_Average
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
 </UL>
 
 <P><STRONG><a name="[47]"></a>ETH_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, stm32f4xx_it.o(.text.ETH_IRQHandler))
@@ -597,16 +597,16 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[105]"></a>GPIO_High</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_High))
+<P><STRONG><a name="[104]"></a>GPIO_High</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_High))
 <BR><BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
 </UL>
 
 <P><STRONG><a name="[109]"></a>GPIO_In</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_In))
@@ -618,99 +618,97 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
 </UL>
 
-<P><STRONG><a name="[103]"></a>GPIO_Low</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_Low))
+<P><STRONG><a name="[102]"></a>GPIO_Low</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_Low))
 <BR><BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
 </UL>
 
-<P><STRONG><a name="[10a]"></a>GPIO_Out</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_Out))
+<P><STRONG><a name="[10b]"></a>GPIO_Out</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_Out))
 <BR><BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
 </UL>
 
-<P><STRONG><a name="[8d]"></a>GPIO_Read</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, gpio_basefunct.o(.text.GPIO_Read))
-<BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = GPIO_Read &rArr; lcdPrintC &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
-</UL>
-<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintC
+<P><STRONG><a name="[10a]"></a>GPIO_Read</STRONG> (Thumb, 46 bytes, Stack size 12 bytes, gpio_basefunct.o(.text.GPIO_Read))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = GPIO_Read
 </UL>
 <BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
 </UL>
 
-<P><STRONG><a name="[8f]"></a>GUI_disChar</STRONG> (Thumb, 188 bytes, Stack size 40 bytes, lcd_gui.o(.text.GUI_disChar))
+<P><STRONG><a name="[8d]"></a>GUI_disChar</STRONG> (Thumb, 188 bytes, Stack size 40 bytes, lcd_gui.o(.text.GUI_disChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
 </UL>
-<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintC
+<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintC
 </UL>
 
-<P><STRONG><a name="[92]"></a>GUI_disNum</STRONG> (Thumb, 104 bytes, Stack size 64 bytes, lcd_gui.o(.text.GUI_disNum))
+<P><STRONG><a name="[90]"></a>GUI_disNum</STRONG> (Thumb, 104 bytes, Stack size 64 bytes, lcd_gui.o(.text.GUI_disNum))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + In Cycle
 <LI>Call Chain = GUI_disNum &rArr;  printDebugMsg (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;itoa
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
+<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;itoa
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
+<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
 </UL>
 
-<P><STRONG><a name="[94]"></a>GUI_disStr</STRONG> (Thumb, 276 bytes, Stack size 40 bytes, lcd_gui.o(.text.GUI_disStr))
+<P><STRONG><a name="[92]"></a>GUI_disStr</STRONG> (Thumb, 276 bytes, Stack size 40 bytes, lcd_gui.o(.text.GUI_disStr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + In Cycle
 <LI>Call Chain = GUI_disStr &rArr;  GUI_disChar (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disChar
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
+<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disChar
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
 </UL>
 
-<P><STRONG><a name="[95]"></a>GUI_drawRectangle</STRONG> (Thumb, 426 bytes, Stack size 32 bytes, lcd_gui.o(.text.GUI_drawRectangle))
+<P><STRONG><a name="[93]"></a>GUI_drawRectangle</STRONG> (Thumb, 426 bytes, Stack size 32 bytes, lcd_gui.o(.text.GUI_drawRectangle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = GUI_drawRectangle &rArr; LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintC
+<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintC
 </UL>
 
-<P><STRONG><a name="[97]"></a>GUI_init</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, lcd_gui.o(.text.GUI_init))
+<P><STRONG><a name="[95]"></a>GUI_init</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, lcd_gui.o(.text.GUI_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = GUI_init &rArr; LCD_clear &rArr; LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9a]"></a>HAL_DMA_Abort</STRONG> (Thumb, 234 bytes, Stack size 24 bytes, stm32f4xx_hal_dma.o(.text.HAL_DMA_Abort))
+<P><STRONG><a name="[98]"></a>HAL_DMA_Abort</STRONG> (Thumb, 234 bytes, Stack size 24 bytes, stm32f4xx_hal_dma.o(.text.HAL_DMA_Abort))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_DMA_Abort
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
+<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
 </UL>
 
 <P><STRONG><a name="[86]"></a>HAL_Delay</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, stm32f4xx_hal.o(.text.HAL_Delay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_ms
 </UL>
 
-<P><STRONG><a name="[9e]"></a>HAL_ETH_ErrorCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32f4xx_hal_eth.o(.text.HAL_ETH_ErrorCallback))
+<P><STRONG><a name="[9c]"></a>HAL_ETH_ErrorCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32f4xx_hal_eth.o(.text.HAL_ETH_ErrorCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = HAL_ETH_ErrorCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_IRQHandler
@@ -719,285 +717,285 @@ Global Symbols
 <P><STRONG><a name="[87]"></a>HAL_ETH_IRQHandler</STRONG> (Thumb, 194 bytes, Stack size 16 bytes, stm32f4xx_hal_eth.o(.text.HAL_ETH_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = HAL_ETH_IRQHandler &rArr; HAL_ETH_ErrorCallback
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_ErrorCallback
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_TxCpltCallback
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_RxCpltCallback
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_ErrorCallback
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_TxCpltCallback
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_RxCpltCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ETH_IRQHandler
 </UL>
 
-<P><STRONG><a name="[9c]"></a>HAL_ETH_RxCpltCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32f4xx_hal_eth.o(.text.HAL_ETH_RxCpltCallback))
+<P><STRONG><a name="[9a]"></a>HAL_ETH_RxCpltCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32f4xx_hal_eth.o(.text.HAL_ETH_RxCpltCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = HAL_ETH_RxCpltCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_IRQHandler
 </UL>
 
-<P><STRONG><a name="[9d]"></a>HAL_ETH_TxCpltCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32f4xx_hal_eth.o(.text.HAL_ETH_TxCpltCallback))
+<P><STRONG><a name="[9b]"></a>HAL_ETH_TxCpltCallback</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, stm32f4xx_hal_eth.o(.text.HAL_ETH_TxCpltCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = HAL_ETH_TxCpltCallback
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ETH_IRQHandler
 </UL>
 
-<P><STRONG><a name="[f0]"></a>HAL_GPIO_DeInit</STRONG> (Thumb, 604 bytes, Stack size 64 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_DeInit))
+<P><STRONG><a name="[ee]"></a>HAL_GPIO_DeInit</STRONG> (Thumb, 604 bytes, Stack size 64 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_DeInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_GPIO_DeInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Uninitialize
+<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Uninitialize
 </UL>
 
 <P><STRONG><a name="[89]"></a>HAL_GPIO_Init</STRONG> (Thumb, 1008 bytes, Stack size 64 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initGPIOs
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
+<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initGPIOs
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 
-<P><STRONG><a name="[e1]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_ReadPin))
+<P><STRONG><a name="[df]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_ReadPin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_GPIO_ReadPin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetModemStatus
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Scan
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetModemStatus
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Scan
 </UL>
 
 <P><STRONG><a name="[8a]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_TogglePin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_GPIO_TogglePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 
-<P><STRONG><a name="[bf]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
+<P><STRONG><a name="[bd]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetModemControl
+<BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetModemControl
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParameters
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Reset
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParameters
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Reset
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
 </UL>
 
-<P><STRONG><a name="[9b]"></a>HAL_GetTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text.HAL_GetTick))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
+<P><STRONG><a name="[99]"></a>HAL_GetTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text.HAL_GetTick))
+<BR><BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
 
-<P><STRONG><a name="[d3]"></a>HAL_IncTick</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text.HAL_IncTick))
+<P><STRONG><a name="[d1]"></a>HAL_IncTick</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text.HAL_IncTick))
 <BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
-<P><STRONG><a name="[9f]"></a>HAL_Init</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text.HAL_Init))
+<P><STRONG><a name="[9d]"></a>HAL_Init</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text.HAL_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; NVIC_EncodePriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 
-<P><STRONG><a name="[a1]"></a>HAL_InitTick</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text.HAL_InitTick))
+<P><STRONG><a name="[9f]"></a>HAL_InitTick</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text.HAL_InitTick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; NVIC_EncodePriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-</UL>
-
-<P><STRONG><a name="[a2]"></a>HAL_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text.HAL_MspInit))
-<BR><BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 </UL>
 
-<P><STRONG><a name="[a5]"></a>HAL_NVIC_DisableIRQ</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text.HAL_NVIC_DisableIRQ))
+<P><STRONG><a name="[a0]"></a>HAL_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text.HAL_MspInit))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+</UL>
+
+<P><STRONG><a name="[a3]"></a>HAL_NVIC_DisableIRQ</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text.HAL_NVIC_DisableIRQ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = HAL_NVIC_DisableIRQ &rArr; __NVIC_DisableIRQ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
 </UL>
 
-<P><STRONG><a name="[a4]"></a>HAL_NVIC_SetPriority</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_hal_cortex.o(.text.HAL_NVIC_SetPriority))
+<P><STRONG><a name="[a2]"></a>HAL_NVIC_SetPriority</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, stm32f4xx_hal_cortex.o(.text.HAL_NVIC_SetPriority))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_NVIC_SetPriority &rArr; NVIC_EncodePriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_EncodePriority
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_GetPriorityGrouping
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_EncodePriority
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_GetPriorityGrouping
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
-<P><STRONG><a name="[a0]"></a>HAL_NVIC_SetPriorityGrouping</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text.HAL_NVIC_SetPriorityGrouping))
+<P><STRONG><a name="[9e]"></a>HAL_NVIC_SetPriorityGrouping</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text.HAL_NVIC_SetPriorityGrouping))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = HAL_NVIC_SetPriorityGrouping &rArr; __NVIC_SetPriorityGrouping
 </UL>
-<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriorityGrouping
+<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriorityGrouping
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+<BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 </UL>
 
-<P><STRONG><a name="[ab]"></a>HAL_PWREx_EnableOverDrive</STRONG> (Thumb, 190 bytes, Stack size 24 bytes, stm32f4xx_hal_pwr_ex.o(.text.HAL_PWREx_EnableOverDrive))
+<P><STRONG><a name="[a9]"></a>HAL_PWREx_EnableOverDrive</STRONG> (Thumb, 190 bytes, Stack size 24 bytes, stm32f4xx_hal_pwr_ex.o(.text.HAL_PWREx_EnableOverDrive))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_PWREx_EnableOverDrive
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
-<P><STRONG><a name="[ac]"></a>HAL_RCC_ClockConfig</STRONG> (Thumb, 610 bytes, Stack size 24 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_ClockConfig))
+<P><STRONG><a name="[aa]"></a>HAL_RCC_ClockConfig</STRONG> (Thumb, 610 bytes, Stack size 24 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_ClockConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; NVIC_EncodePriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
-<P><STRONG><a name="[ae]"></a>HAL_RCC_GetHCLKFreq</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_GetHCLKFreq))
+<P><STRONG><a name="[ac]"></a>HAL_RCC_GetHCLKFreq</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_GetHCLKFreq))
 <BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 </UL>
 
 <P><STRONG><a name="[75]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_GetPCLK1Freq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_RCC_GetPCLK1Freq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
+<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.USART3_Resources)
 </UL>
-<P><STRONG><a name="[ad]"></a>HAL_RCC_GetSysClockFreq</STRONG> (Thumb, 230 bytes, Stack size 32 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_GetSysClockFreq))
+<P><STRONG><a name="[ab]"></a>HAL_RCC_GetSysClockFreq</STRONG> (Thumb, 230 bytes, Stack size 32 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_GetSysClockFreq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_RCC_GetSysClockFreq &rArr; __aeabi_uldivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 </UL>
 
-<P><STRONG><a name="[af]"></a>HAL_RCC_OscConfig</STRONG> (Thumb, 1700 bytes, Stack size 32 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_OscConfig))
+<P><STRONG><a name="[ad]"></a>HAL_RCC_OscConfig</STRONG> (Thumb, 1700 bytes, Stack size 32 bytes, stm32f4xx_hal_rcc.o(.text.HAL_RCC_OscConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HAL_RCC_OscConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
-<P><STRONG><a name="[a3]"></a>HAL_SYSTICK_Config</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text.HAL_SYSTICK_Config))
+<P><STRONG><a name="[a1]"></a>HAL_SYSTICK_Config</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text.HAL_SYSTICK_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_SYSTICK_Config &rArr; SysTick_Config &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Config
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Config
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
-<P><STRONG><a name="[cc]"></a>HAL_TIMEx_MasterConfigSynchronization</STRONG> (Thumb, 290 bytes, Stack size 20 bytes, stm32f4xx_hal_tim_ex.o(.text.HAL_TIMEx_MasterConfigSynchronization))
+<P><STRONG><a name="[ca]"></a>HAL_TIMEx_MasterConfigSynchronization</STRONG> (Thumb, 290 bytes, Stack size 20 bytes, stm32f4xx_hal_tim_ex.o(.text.HAL_TIMEx_MasterConfigSynchronization))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = HAL_TIMEx_MasterConfigSynchronization
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
 </UL>
 
-<P><STRONG><a name="[b2]"></a>HAL_TIM_PWM_ConfigChannel</STRONG> (Thumb, 324 bytes, Stack size 32 bytes, stm32f4xx_hal_tim.o(.text.HAL_TIM_PWM_ConfigChannel))
+<P><STRONG><a name="[b0]"></a>HAL_TIM_PWM_ConfigChannel</STRONG> (Thumb, 324 bytes, Stack size 32 bytes, stm32f4xx_hal_tim.o(.text.HAL_TIM_PWM_ConfigChannel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC2_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC4_SetConfig
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC3_SetConfig
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC1_SetConfig
+<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC4_SetConfig
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC3_SetConfig
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC1_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_SetValue
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_SetValue
 </UL>
 
-<P><STRONG><a name="[b7]"></a>HAL_TIM_PWM_Init</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text.HAL_TIM_PWM_Init))
+<P><STRONG><a name="[b5]"></a>HAL_TIM_PWM_Init</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text.HAL_TIM_PWM_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = HAL_TIM_PWM_Init &rArr; TIM_Base_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspInit
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
 </UL>
 
-<P><STRONG><a name="[b8]"></a>HAL_TIM_PWM_MspInit</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, lcd_tim.o(.text.HAL_TIM_PWM_MspInit))
+<P><STRONG><a name="[b6]"></a>HAL_TIM_PWM_MspInit</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, lcd_tim.o(.text.HAL_TIM_PWM_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_TIM_PWM_MspInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
+<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
 </UL>
 
-<P><STRONG><a name="[ba]"></a>HAL_TIM_PWM_Start</STRONG> (Thumb, 128 bytes, Stack size 32 bytes, stm32f4xx_hal_tim.o(.text.HAL_TIM_PWM_Start))
+<P><STRONG><a name="[b8]"></a>HAL_TIM_PWM_Start</STRONG> (Thumb, 128 bytes, Stack size 32 bytes, stm32f4xx_hal_tim.o(.text.HAL_TIM_PWM_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = HAL_TIM_PWM_Start &rArr; TIM_CCxChannelCmd
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+<BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_SetValue
+<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_SetValue
 </UL>
 
 <P><STRONG><a name="[2]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.HardFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[bc]"></a>LCDErrHandler</STRONG> (Thumb, 182 bytes, Stack size 64 bytes, lcd_tools.o(.text.LCDErrHandler))
+<P><STRONG><a name="[ba]"></a>LCDErrHandler</STRONG> (Thumb, 182 bytes, Stack size 64 bytes, lcd_tools.o(.text.LCDErrHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_us
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_SPI_SR
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetTPSpeed
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_SPI_SR
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetTPSpeed
 </UL>
 
-<P><STRONG><a name="[99]"></a>LCD_clear</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_clear))
+<P><STRONG><a name="[97]"></a>LCD_clear</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_clear))
 <BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = LCD_clear &rArr; LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_init
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_init
 </UL>
 
-<P><STRONG><a name="[91]"></a>LCD_fillRectangleBW</STRONG> (Thumb, 398 bytes, Stack size 48 bytes, lcd_driver.o(.text.LCD_fillRectangleBW))
+<P><STRONG><a name="[8f]"></a>LCD_fillRectangleBW</STRONG> (Thumb, 398 bytes, Stack size 48 bytes, lcd_driver.o(.text.LCD_fillRectangleBW))
 <BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_setWindow
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
+<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_setWindow
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_DrawCross
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disChar
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_DrawCross
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disChar
 </UL>
 
-<P><STRONG><a name="[96]"></a>LCD_fillRectangleMC</STRONG> (Thumb, 200 bytes, Stack size 40 bytes, lcd_driver.o(.text.LCD_fillRectangleMC))
+<P><STRONG><a name="[94]"></a>LCD_fillRectangleMC</STRONG> (Thumb, 200 bytes, Stack size 40 bytes, lcd_driver.o(.text.LCD_fillRectangleMC))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParameters
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_setWindow
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParameters
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_setWindow
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
 </UL>
-<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear
 </UL>
 
-<P><STRONG><a name="[98]"></a>LCD_init</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_init))
+<P><STRONG><a name="[96]"></a>LCD_init</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = LCD_init &rArr; LCD_WriteCMDList &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_ms
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_Init
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIinit
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_Init
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIinit
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetGramScanWay
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMDList
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetBackLight
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Reset
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetGramScanWay
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMDList
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetBackLight
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Reset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_init
+<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_init
 </UL>
 
 <P><STRONG><a name="[3]"></a>MemManage_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.MemManage_Handler))
@@ -1006,61 +1004,61 @@ Global Symbols
 <P><STRONG><a name="[1]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.NMI_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[c1]"></a>PWM_SetValue</STRONG> (Thumb, 56 bytes, Stack size 48 bytes, lcd_tim.o(.text.PWM_SetValue))
+<P><STRONG><a name="[bf]"></a>PWM_SetValue</STRONG> (Thumb, 56 bytes, Stack size 48 bytes, lcd_tim.o(.text.PWM_SetValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = PWM_SetValue &rArr; HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC2_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetBackLight
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetBackLight
 </UL>
 
 <P><STRONG><a name="[8]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.PendSV_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[cd]"></a>SPI4W_Read_Byte</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, lcd_spi.o(.text.SPI4W_Read_Byte))
+<P><STRONG><a name="[cb]"></a>SPI4W_Read_Byte</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, lcd_spi.o(.text.SPI4W_Read_Byte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = SPI4W_Read_Byte &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
+<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
+<BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
 </UL>
 
-<P><STRONG><a name="[c5]"></a>SPI4W_Write_Byte</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, lcd_spi.o(.text.SPI4W_Write_Byte))
+<P><STRONG><a name="[c3]"></a>SPI4W_Write_Byte</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, lcd_spi.o(.text.SPI4W_Write_Byte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_SPI_SR
+<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_SPI_SR
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Read_Byte
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParameters
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Read_Byte
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParameters
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
 </UL>
 
-<P><STRONG><a name="[c9]"></a>SPIinit</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, lcd_spi.o(.text.SPIinit))
+<P><STRONG><a name="[c7]"></a>SPIinit</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, lcd_spi.o(.text.SPIinit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = SPIinit &rArr; SPIInitGPIOsWithoutHAL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIInitDevWithoutHAL
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIInitGPIOsWithoutHAL
+<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIInitDevWithoutHAL
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIInitGPIOsWithoutHAL
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
 </UL>
 
-<P><STRONG><a name="[d1]"></a>SPIsetLCDSpeed</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, lcd_spi.o(.text.SPIsetLCDSpeed))
+<P><STRONG><a name="[cf]"></a>SPIsetLCDSpeed</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, lcd_spi.o(.text.SPIsetLCDSpeed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SPIsetLCDSpeed &rArr; SPIInitDevWithoutHAL
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIInitDevWithoutHAL
+<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIInitDevWithoutHAL
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
+<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
 </UL>
 
-<P><STRONG><a name="[d2]"></a>SPIsetTPSpeed</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, lcd_spi.o(.text.SPIsetTPSpeed))
+<P><STRONG><a name="[d0]"></a>SPIsetTPSpeed</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, lcd_spi.o(.text.SPIsetTPSpeed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = SPIsetTPSpeed &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIInitDevWithoutHAL
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIInitDevWithoutHAL
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
+<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
 </UL>
 
 <P><STRONG><a name="[6]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.SVC_Handler))
@@ -1069,79 +1067,79 @@ Global Symbols
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, stm32f4xx_it.o(.text.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SysTick_Handler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
+<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
 <P><STRONG><a name="[65]"></a>SystemInit</STRONG> (Thumb, 110 bytes, Stack size 0 bytes, system_stm32f4xx.o(.text.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(.text)
 </UL>
-<P><STRONG><a name="[ca]"></a>TIM4_Init</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, lcd_tim.o(.text.TIM4_Init))
+<P><STRONG><a name="[c8]"></a>TIM4_Init</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, lcd_tim.o(.text.TIM4_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = TIM4_Init &rArr; MX_TIM4_Init &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
+<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
 </UL>
 
-<P><STRONG><a name="[b9]"></a>TIM_Base_SetConfig</STRONG> (Thumb, 410 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text.TIM_Base_SetConfig))
+<P><STRONG><a name="[b7]"></a>TIM_Base_SetConfig</STRONG> (Thumb, 410 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text.TIM_Base_SetConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = TIM_Base_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
+<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
 </UL>
 
-<P><STRONG><a name="[bb]"></a>TIM_CCxChannelCmd</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text.TIM_CCxChannelCmd))
+<P><STRONG><a name="[b9]"></a>TIM_CCxChannelCmd</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text.TIM_CCxChannelCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_CCxChannelCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
+<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
 </UL>
 
-<P><STRONG><a name="[b4]"></a>TIM_OC2_SetConfig</STRONG> (Thumb, 244 bytes, Stack size 20 bytes, stm32f4xx_hal_tim.o(.text.TIM_OC2_SetConfig))
+<P><STRONG><a name="[b2]"></a>TIM_OC2_SetConfig</STRONG> (Thumb, 244 bytes, Stack size 20 bytes, stm32f4xx_hal_tim.o(.text.TIM_OC2_SetConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = TIM_OC2_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 </UL>
 
-<P><STRONG><a name="[d5]"></a>TP_Adjust</STRONG> (Thumb, 1268 bytes, Stack size 112 bytes, lcd_touch.o(.text.TP_Adjust))
+<P><STRONG><a name="[d3]"></a>TP_Adjust</STRONG> (Thumb, 1268 bytes, Stack size 112 bytes, lcd_touch.o(.text.TP_Adjust))
 <BR><BR>[Stack]<UL><LI>Max Depth = 488<LI>Call Chain = TP_Adjust &rArr; TP_ShowInfo &rArr; GUI_drawRectangle &rArr; LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_pressed
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_DrawCross
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear
+<BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_pressed
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_DrawCross
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_ms
 </UL>
-<BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
+<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
 </UL>
 
-<P><STRONG><a name="[da]"></a>TP_Init</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, lcd_touch.o(.text.TP_Init))
+<P><STRONG><a name="[d8]"></a>TP_Init</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, lcd_touch.o(.text.TP_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 504<LI>Call Chain = TP_Init &rArr; TP_Adjust &rArr; TP_ShowInfo &rArr; GUI_drawRectangle &rArr; LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_SetDefaultCalibration
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_SetDefaultCalibration
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d7]"></a>TP_pressed</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, lcd_touch.o(.text.TP_pressed))
+<P><STRONG><a name="[d5]"></a>TP_pressed</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, lcd_touch.o(.text.TP_pressed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 320<LI>Call Chain = TP_pressed &rArr; TP_Scan &rArr; TP_Read_TwiceADC &rArr; TP_Read_ADC_XY &rArr; TP_Read_ADC_Average &rArr; TP_Read_ADC &rArr; SPI4W_Read_Byte &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Scan
+<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Scan
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
 </UL>
 
 <P><STRONG><a name="[31]"></a>USART3_IRQHandler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usart_stm32f4xx.o(.text.USART3_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART3_IRQHandler &rArr; USART_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_IRQHandler
+<BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_IRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[e8]"></a>USART_IRQHandler</STRONG> (Thumb, 1026 bytes, Stack size 40 bytes, usart_stm32f4xx.o(.text.USART_IRQHandler))
+<P><STRONG><a name="[e6]"></a>USART_IRQHandler</STRONG> (Thumb, 1026 bytes, Stack size 40 bytes, usart_stm32f4xx.o(.text.USART_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = USART_IRQHandler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
@@ -1150,492 +1148,499 @@ Global Symbols
 <P><STRONG><a name="[5]"></a>UsageFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.UsageFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[f5]"></a>checkCRC</STRONG> (Thumb, 150 bytes, Stack size 296 bytes, one_wire.o(.text.checkCRC))
+<P><STRONG><a name="[f3]"></a>checkCRC</STRONG> (Thumb, 150 bytes, Stack size 296 bytes, one_wire.o(.text.checkCRC))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = checkCRC
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
+<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
 </UL>
 
-<P><STRONG><a name="[106]"></a>checkVersionFlashFonts</STRONG> (Thumb, 32 bytes, Stack size 4 bytes, fontsflash.o(.text.checkVersionFlashFonts))
+<P><STRONG><a name="[105]"></a>checkVersionFlashFonts</STRONG> (Thumb, 32 bytes, Stack size 4 bytes, fontsflash.o(.text.checkVersionFlashFonts))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = checkVersionFlashFonts
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f7]"></a>demo</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, main.o(.text.demo))
-<BR><BR>[Stack]<UL><LI>Max Depth = 424<LI>Call Chain = demo &rArr; readRom &rArr; read_bit &rArr; GPIO_Read &rArr; lcdPrintC &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[f5]"></a>demo</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, main.o(.text.demo))
+<BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = demo &rArr; lcdPrintC &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintC
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdGotoXY
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkCRC
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readRom
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_GPIO
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTimer
+<BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintC
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdGotoXY
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkCRC
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readRom
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_GPIO
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTimer
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d8]"></a>distance</STRONG> (Thumb, 94 bytes, Stack size 32 bytes, lcd_touch.o(.text.distance))
+<P><STRONG><a name="[d6]"></a>distance</STRONG> (Thumb, 94 bytes, Stack size 32 bytes, lcd_touch.o(.text.distance))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = distance &rArr; __hardfp_sqrt &rArr; _dsqrt &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abs
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abs
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
 </UL>
 
-<P><STRONG><a name="[ff]"></a>initITSboard</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, init.o(.text.initITSboard))
+<P><STRONG><a name="[fe]"></a>initITSboard</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, init.o(.text.initITSboard))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = initITSboard &rArr; SystemClock_Config &rArr; Error_Handler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stdinout_init
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initGPIOs
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stdinout_init
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initGPIOs
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f8]"></a>initTimer</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, timer.o(.text.initTimer))
-<BR><BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
+<P><STRONG><a name="[f6]"></a>initTimer</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, timer.o(.text.initTimer))
+<BR><BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
 </UL>
 
-<P><STRONG><a name="[f9]"></a>init_GPIO</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, gpio_basefunct.o(.text.init_GPIO))
+<P><STRONG><a name="[f7]"></a>init_GPIO</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, gpio_basefunct.o(.text.init_GPIO))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = init_GPIO
 </UL>
-<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open_drain
+<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open_drain
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
+<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
 </UL>
 
-<P><STRONG><a name="[102]"></a>io_reset</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, one_wire.o(.text.io_reset))
+<P><STRONG><a name="[101]"></a>io_reset</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, one_wire.o(.text.io_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = io_reset &rArr; wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readRom
+<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readRom
 </UL>
 
-<P><STRONG><a name="[93]"></a>itoa</STRONG> (Thumb, 180 bytes, Stack size 40 bytes, lcd_tools.o(.text.itoa))
+<P><STRONG><a name="[91]"></a>itoa</STRONG> (Thumb, 180 bytes, Stack size 40 bytes, lcd_tools.o(.text.itoa))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = itoa &rArr; __aeabi_ldivmod &rArr; __aeabi_uldivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ldivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
 </UL>
 
-<P><STRONG><a name="[fb]"></a>lcdGotoXY</STRONG> (Thumb, 58 bytes, Stack size 4 bytes, lcd.o(.text.lcdGotoXY))
+<P><STRONG><a name="[f9]"></a>lcdGotoXY</STRONG> (Thumb, 58 bytes, Stack size 4 bytes, lcd.o(.text.lcdGotoXY))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = lcdGotoXY
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
+<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
 </UL>
 
-<P><STRONG><a name="[8e]"></a>lcdPrintC</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, lcd.o(.text.lcdPrintC))
+<P><STRONG><a name="[fa]"></a>lcdPrintC</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, lcd.o(.text.lcdPrintC))
 <BR><BR>[Stack]<UL><LI>Max Depth = 344<LI>Call Chain = lcdPrintC &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disChar
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
+<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disChar
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Read
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
+<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
 </UL>
 
 <P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = main &rArr; TP_Init &rArr; TP_Adjust &rArr; TP_ShowInfo &rArr; GUI_drawRectangle &rArr; LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkVersionFlashFonts
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_init
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkVersionFlashFonts
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_init
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[101]"></a>open_drain</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.open_drain))
-<BR><BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_GPIO
+<P><STRONG><a name="[100]"></a>open_drain</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.open_drain))
+<BR><BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_GPIO
 </UL>
 
-<P><STRONG><a name="[90]"></a>printDebugMsg</STRONG> (Thumb, 184 bytes, Stack size 40 bytes, lcd_debug.o(.text.printDebugMsg))
+<P><STRONG><a name="[8e]"></a>printDebugMsg</STRONG> (Thumb, 184 bytes, Stack size 40 bytes, lcd_debug.o(.text.printDebugMsg))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = printDebugMsg &rArr; GUI_disNum &rArr;  printDebugMsg (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disChar
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disChar
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
 </UL>
 
-<P><STRONG><a name="[fa]"></a>readRom</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, one_wire.o(.text.readRom))
-<BR><BR>[Stack]<UL><LI>Max Depth = 400<LI>Call Chain = readRom &rArr; read_bit &rArr; GPIO_Read &rArr; lcdPrintC &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[f8]"></a>readRom</STRONG> (Thumb, 128 bytes, Stack size 40 bytes, one_wire.o(.text.readRom))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = readRom &rArr; read_byte &rArr; read_bit &rArr; wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_byte
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
+<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demo
 </UL>
 
 <P><STRONG><a name="[108]"></a>read_bit</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, one_wire.o(.text.read_bit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = read_bit &rArr; GPIO_Read &rArr; lcdPrintC &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = read_bit &rArr; wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Read
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Out
+<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Read
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Out
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_In
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readRom
+<BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_byte
 </UL>
 
-<P><STRONG><a name="[100]"></a>stdinout_init</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, stdinout_usart.o(.text.stdinout_init))
+<P><STRONG><a name="[107]"></a>read_byte</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, one_wire.o(.text.read_byte))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = read_byte &rArr; read_bit &rArr; wait
+</UL>
+<BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readRom
+</UL>
+
+<P><STRONG><a name="[ff]"></a>stdinout_init</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, stdinout_usart.o(.text.stdinout_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = stdinout_init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 
-<P><STRONG><a name="[104]"></a>wait</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, time.o(.text.wait))
+<P><STRONG><a name="[103]"></a>wait</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, time.o(.text.wait))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = wait
 </UL>
 <BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
 </UL>
 
-<P><STRONG><a name="[107]"></a>writeByte</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, one_wire.o(.text.writeByte))
+<P><STRONG><a name="[106]"></a>writeByte</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, one_wire.o(.text.writeByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = writeByte &rArr; write_zero &rArr; wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
+<BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readRom
+<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readRom
 </UL>
 
-<P><STRONG><a name="[10b]"></a>write_one</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, one_wire.o(.text.write_one))
+<P><STRONG><a name="[10c]"></a>write_one</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, one_wire.o(.text.write_one))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = write_one &rArr; wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 </UL>
-<BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
+<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
 </UL>
 
-<P><STRONG><a name="[10c]"></a>write_zero</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, one_wire.o(.text.write_zero))
+<P><STRONG><a name="[10d]"></a>write_zero</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, one_wire.o(.text.write_zero))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = write_zero &rArr; wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 </UL>
-<BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
+<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
 </UL>
 
-<P><STRONG><a name="[fd]"></a>__hardfp_sqrt</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, sqrt.o(i.__hardfp_sqrt))
+<P><STRONG><a name="[fc]"></a>__hardfp_sqrt</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, sqrt.o(i.__hardfp_sqrt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = __hardfp_sqrt &rArr; _dsqrt &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
+<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
 </UL>
 
-<P><STRONG><a name="[11e]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[11f]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[11f]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[120]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[120]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[121]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[10d]"></a>__set_errno</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, errno.o(i.__set_errno))
-<BR><BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<P><STRONG><a name="[10e]"></a>__set_errno</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, errno.o(i.__set_errno))
+<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
 </UL>
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[aa]"></a>__NVIC_SetPriorityGrouping</STRONG> (Thumb, 60 bytes, Stack size 12 bytes, stm32f4xx_hal_cortex.o(.text.__NVIC_SetPriorityGrouping))
+<P><STRONG><a name="[a8]"></a>__NVIC_SetPriorityGrouping</STRONG> (Thumb, 60 bytes, Stack size 12 bytes, stm32f4xx_hal_cortex.o(.text.__NVIC_SetPriorityGrouping))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = __NVIC_SetPriorityGrouping
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
+<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
 </UL>
 
-<P><STRONG><a name="[a7]"></a>__NVIC_GetPriorityGrouping</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text.__NVIC_GetPriorityGrouping))
-<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<P><STRONG><a name="[a5]"></a>__NVIC_GetPriorityGrouping</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text.__NVIC_GetPriorityGrouping))
+<BR><BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
 
-<P><STRONG><a name="[a8]"></a>NVIC_EncodePriority</STRONG> (Thumb, 108 bytes, Stack size 32 bytes, stm32f4xx_hal_cortex.o(.text.NVIC_EncodePriority))
+<P><STRONG><a name="[a6]"></a>NVIC_EncodePriority</STRONG> (Thumb, 108 bytes, Stack size 32 bytes, stm32f4xx_hal_cortex.o(.text.NVIC_EncodePriority))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = NVIC_EncodePriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
 
-<P><STRONG><a name="[a9]"></a>__NVIC_SetPriority</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text.__NVIC_SetPriority))
+<P><STRONG><a name="[a7]"></a>__NVIC_SetPriority</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text.__NVIC_SetPriority))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Config
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Config
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
 
-<P><STRONG><a name="[a6]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 56 bytes, Stack size 4 bytes, stm32f4xx_hal_cortex.o(.text.__NVIC_DisableIRQ))
+<P><STRONG><a name="[a4]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 56 bytes, Stack size 4 bytes, stm32f4xx_hal_cortex.o(.text.__NVIC_DisableIRQ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __NVIC_DisableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_DisableIRQ
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_DisableIRQ
 </UL>
 
-<P><STRONG><a name="[b0]"></a>SysTick_Config</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text.SysTick_Config))
+<P><STRONG><a name="[ae]"></a>SysTick_Config</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text.SysTick_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = SysTick_Config &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
+<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
 </UL>
 
-<P><STRONG><a name="[b3]"></a>TIM_OC1_SetConfig</STRONG> (Thumb, 234 bytes, Stack size 20 bytes, stm32f4xx_hal_tim.o(.text.TIM_OC1_SetConfig))
+<P><STRONG><a name="[b1]"></a>TIM_OC1_SetConfig</STRONG> (Thumb, 234 bytes, Stack size 20 bytes, stm32f4xx_hal_tim.o(.text.TIM_OC1_SetConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = TIM_OC1_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 </UL>
 
-<P><STRONG><a name="[b5]"></a>TIM_OC3_SetConfig</STRONG> (Thumb, 242 bytes, Stack size 20 bytes, stm32f4xx_hal_tim.o(.text.TIM_OC3_SetConfig))
+<P><STRONG><a name="[b3]"></a>TIM_OC3_SetConfig</STRONG> (Thumb, 242 bytes, Stack size 20 bytes, stm32f4xx_hal_tim.o(.text.TIM_OC3_SetConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = TIM_OC3_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 </UL>
 
-<P><STRONG><a name="[b6]"></a>TIM_OC4_SetConfig</STRONG> (Thumb, 164 bytes, Stack size 20 bytes, stm32f4xx_hal_tim.o(.text.TIM_OC4_SetConfig))
+<P><STRONG><a name="[b4]"></a>TIM_OC4_SetConfig</STRONG> (Thumb, 164 bytes, Stack size 20 bytes, stm32f4xx_hal_tim.o(.text.TIM_OC4_SetConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = TIM_OC4_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 </UL>
 
-<P><STRONG><a name="[be]"></a>LCD_Reset</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, lcd_driver.o(.text.LCD_Reset))
+<P><STRONG><a name="[bc]"></a>LCD_Reset</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, lcd_driver.o(.text.LCD_Reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD_Reset &rArr; Driver_Delay_ms &rArr; HAL_Delay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_ms
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
 </UL>
 
-<P><STRONG><a name="[c0]"></a>LCD_SetBackLight</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_SetBackLight))
+<P><STRONG><a name="[be]"></a>LCD_SetBackLight</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_SetBackLight))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = LCD_SetBackLight &rArr; PWM_SetValue &rArr; HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC2_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_SetValue
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_SetValue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
 </UL>
 
-<P><STRONG><a name="[c6]"></a>LCD_WriteCMDList</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, lcd_driver.o(.text.LCD_WriteCMDList))
+<P><STRONG><a name="[c4]"></a>LCD_WriteCMDList</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, lcd_driver.o(.text.LCD_WriteCMDList))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = LCD_WriteCMDList &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
 </UL>
 
-<P><STRONG><a name="[c2]"></a>LCD_SetGramScanWay</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, lcd_driver.o(.text.LCD_SetGramScanWay))
+<P><STRONG><a name="[c0]"></a>LCD_SetGramScanWay</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, lcd_driver.o(.text.LCD_SetGramScanWay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = LCD_SetGramScanWay &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
 </UL>
 
-<P><STRONG><a name="[c3]"></a>LCD_WriteCMD</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, lcd_driver.o(.text.LCD_WriteCMD))
+<P><STRONG><a name="[c1]"></a>LCD_WriteCMD</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, lcd_driver.o(.text.LCD_WriteCMD))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = LCD_WriteCMD &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_setWindow
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetGramScanWay
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMDList
+<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_init
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_setWindow
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetGramScanWay
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMDList
 </UL>
 
-<P><STRONG><a name="[c4]"></a>LCD_WriteParam</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_WriteParam))
+<P><STRONG><a name="[c2]"></a>LCD_WriteParam</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_WriteParam))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParameters
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParameters
 </UL>
-<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_setWindow
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetGramScanWay
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMDList
+<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_setWindow
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetGramScanWay
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMDList
 </UL>
 
-<P><STRONG><a name="[c8]"></a>LCD_setWindow</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_setWindow))
+<P><STRONG><a name="[c6]"></a>LCD_setWindow</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, lcd_driver.o(.text.LCD_setWindow))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteCMD
 </UL>
-<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
+<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
 </UL>
 
-<P><STRONG><a name="[c7]"></a>LCD_WriteParameters</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, lcd_driver.o(.text.LCD_WriteParameters))
+<P><STRONG><a name="[c5]"></a>LCD_WriteParameters</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, lcd_driver.o(.text.LCD_WriteParameters))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
+<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteParam
 </UL>
 
-<P><STRONG><a name="[d6]"></a>TP_DrawCross</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, lcd_touch.o(.text.TP_DrawCross))
+<P><STRONG><a name="[d4]"></a>TP_DrawCross</STRONG> (Thumb, 66 bytes, Stack size 24 bytes, lcd_touch.o(.text.TP_DrawCross))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = TP_DrawCross &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
+<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleBW
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
 </UL>
 
-<P><STRONG><a name="[d9]"></a>TP_ShowInfo</STRONG> (Thumb, 702 bytes, Stack size 80 bytes, lcd_touch.o(.text.TP_ShowInfo))
+<P><STRONG><a name="[d7]"></a>TP_ShowInfo</STRONG> (Thumb, 702 bytes, Stack size 80 bytes, lcd_touch.o(.text.TP_ShowInfo))
 <BR><BR>[Stack]<UL><LI>Max Depth = 376<LI>Call Chain = TP_ShowInfo &rArr; GUI_drawRectangle &rArr; LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
 </UL>
 
-<P><STRONG><a name="[e0]"></a>TP_Scan</STRONG> (Thumb, 252 bytes, Stack size 24 bytes, lcd_touch.o(.text.TP_Scan))
+<P><STRONG><a name="[de]"></a>TP_Scan</STRONG> (Thumb, 252 bytes, Stack size 24 bytes, lcd_touch.o(.text.TP_Scan))
 <BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = TP_Scan &rArr; TP_Read_TwiceADC &rArr; TP_Read_ADC_XY &rArr; TP_Read_ADC_Average &rArr; TP_Read_ADC &rArr; SPI4W_Read_Byte &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
+<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_pressed
-</UL>
-
-<P><STRONG><a name="[db]"></a>TP_SetDefaultCalibration</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd_touch.o(.text.TP_SetDefaultCalibration))
-<BR><BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_pressed
 </UL>
 
-<P><STRONG><a name="[df]"></a>TP_Read_TwiceADC</STRONG> (Thumb, 244 bytes, Stack size 40 bytes, lcd_touch.o(.text.TP_Read_TwiceADC))
+<P><STRONG><a name="[d9]"></a>TP_SetDefaultCalibration</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, lcd_touch.o(.text.TP_SetDefaultCalibration))
+<BR><BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
+</UL>
+
+<P><STRONG><a name="[dd]"></a>TP_Read_TwiceADC</STRONG> (Thumb, 244 bytes, Stack size 40 bytes, lcd_touch.o(.text.TP_Read_TwiceADC))
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = TP_Read_TwiceADC &rArr; TP_Read_ADC_XY &rArr; TP_Read_ADC_Average &rArr; TP_Read_ADC &rArr; SPI4W_Read_Byte &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetLCDSpeed
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_us
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetTPSpeed
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_XY
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetLCDSpeed
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_us
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetTPSpeed
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_XY
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Scan
+<BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Scan
 </UL>
 
-<P><STRONG><a name="[de]"></a>TP_Read_ADC_XY</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, lcd_touch.o(.text.TP_Read_ADC_XY))
+<P><STRONG><a name="[dc]"></a>TP_Read_ADC_XY</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, lcd_touch.o(.text.TP_Read_ADC_XY))
 <BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = TP_Read_ADC_XY &rArr; TP_Read_ADC_Average &rArr; TP_Read_ADC &rArr; SPI4W_Read_Byte &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_Average
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_Average
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
+<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_TwiceADC
 </UL>
 
-<P><STRONG><a name="[dd]"></a>TP_Read_ADC_Average</STRONG> (Thumb, 298 bytes, Stack size 32 bytes, lcd_touch.o(.text.TP_Read_ADC_Average))
+<P><STRONG><a name="[db]"></a>TP_Read_ADC_Average</STRONG> (Thumb, 298 bytes, Stack size 32 bytes, lcd_touch.o(.text.TP_Read_ADC_Average))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = TP_Read_ADC_Average &rArr; TP_Read_ADC &rArr; SPI4W_Read_Byte &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_us
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
+<BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_us
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC
 </UL>
-<BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_XY
+<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_XY
 </UL>
 
-<P><STRONG><a name="[dc]"></a>TP_Read_ADC</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, lcd_touch.o(.text.TP_Read_ADC))
+<P><STRONG><a name="[da]"></a>TP_Read_ADC</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, lcd_touch.o(.text.TP_Read_ADC))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = TP_Read_ADC &rArr; SPI4W_Read_Byte &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Read_Byte
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_us
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Read_Byte
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_us
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_Average
+<BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Read_ADC_Average
 </UL>
 
-<P><STRONG><a name="[cf]"></a>SPIInitGPIOsWithoutHAL</STRONG> (Thumb, 218 bytes, Stack size 16 bytes, lcd_spi.o(.text.SPIInitGPIOsWithoutHAL))
+<P><STRONG><a name="[cd]"></a>SPIInitGPIOsWithoutHAL</STRONG> (Thumb, 218 bytes, Stack size 16 bytes, lcd_spi.o(.text.SPIInitGPIOsWithoutHAL))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SPIInitGPIOsWithoutHAL
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIinit
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIinit
 </UL>
 
-<P><STRONG><a name="[d0]"></a>SPIInitDevWithoutHAL</STRONG> (Thumb, 76 bytes, Stack size 4 bytes, lcd_spi.o(.text.SPIInitDevWithoutHAL))
+<P><STRONG><a name="[ce]"></a>SPIInitDevWithoutHAL</STRONG> (Thumb, 76 bytes, Stack size 4 bytes, lcd_spi.o(.text.SPIInitDevWithoutHAL))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = SPIInitDevWithoutHAL
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetLCDSpeed
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetTPSpeed
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIinit
+<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetLCDSpeed
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIsetTPSpeed
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIinit
 </UL>
 
-<P><STRONG><a name="[ce]"></a>check_SPI_SR</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, lcd_spi.o(.text.check_SPI_SR))
+<P><STRONG><a name="[cc]"></a>check_SPI_SR</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, lcd_spi.o(.text.check_SPI_SR))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI4W_Write_Byte
 </UL>
 
 <P><STRONG><a name="[8c]"></a>MX_GPIO_Init</STRONG> (Thumb, 414 bytes, Stack size 88 bytes, lcd_gpio.o(.text.MX_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = MX_GPIO_Init &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 
-<P><STRONG><a name="[cb]"></a>MX_TIM4_Init</STRONG> (Thumb, 170 bytes, Stack size 48 bytes, lcd_tim.o(.text.MX_TIM4_Init))
+<P><STRONG><a name="[c9]"></a>MX_TIM4_Init</STRONG> (Thumb, 170 bytes, Stack size 48 bytes, lcd_tim.o(.text.MX_TIM4_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = MX_TIM4_Init &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCDErrHandler
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_Init
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_Init
 </UL>
 
-<P><STRONG><a name="[b1]"></a>HAL_TIM_MspPostInit</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, lcd_tim.o(.text.HAL_TIM_MspPostInit))
+<P><STRONG><a name="[af]"></a>HAL_TIM_MspPostInit</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, lcd_tim.o(.text.HAL_TIM_MspPostInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = HAL_TIM_MspPostInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
 </UL>
 
-<P><STRONG><a name="[d4]"></a>SystemClock_Config</STRONG> (Thumb, 184 bytes, Stack size 88 bytes, init.o(.text.SystemClock_Config))
+<P><STRONG><a name="[d2]"></a>SystemClock_Config</STRONG> (Thumb, 184 bytes, Stack size 88 bytes, init.o(.text.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = SystemClock_Config &rArr; Error_Handler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
+<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 
-<P><STRONG><a name="[fe]"></a>initGPIOs</STRONG> (Thumb, 320 bytes, Stack size 64 bytes, init.o(.text.initGPIOs))
+<P><STRONG><a name="[fd]"></a>initGPIOs</STRONG> (Thumb, 320 bytes, Stack size 64 bytes, init.o(.text.initGPIOs))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = initGPIOs &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 
 <P><STRONG><a name="[67]"></a>USARTx_GetVersion</STRONG> (Thumb, 20 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.USARTx_GetVersion))
@@ -1646,11 +1651,11 @@ Local Symbols
 <P><STRONG><a name="[68]"></a>USART3_GetCapabilities</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART3_GetCapabilities))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USART3_GetCapabilities &rArr; USART_GetCapabilities
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetCapabilities
+<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetCapabilities
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[e3]"></a>USART_GetCapabilities</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usart_stm32f4xx.o(.text.USART_GetCapabilities))
+<P><STRONG><a name="[e1]"></a>USART_GetCapabilities</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usart_stm32f4xx.o(.text.USART_GetCapabilities))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USART_GetCapabilities
 </UL>
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_GetCapabilities
@@ -1659,15 +1664,15 @@ Local Symbols
 <P><STRONG><a name="[69]"></a>USART3_Initialize</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART3_Initialize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = USART3_Initialize &rArr; USART_Initialize &rArr; Enable_GPIO_Clock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Initialize
+<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Initialize
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[e9]"></a>USART_Initialize</STRONG> (Thumb, 224 bytes, Stack size 24 bytes, usart_stm32f4xx.o(.text.USART_Initialize))
+<P><STRONG><a name="[e7]"></a>USART_Initialize</STRONG> (Thumb, 224 bytes, Stack size 24 bytes, usart_stm32f4xx.o(.text.USART_Initialize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = USART_Initialize &rArr; Enable_GPIO_Clock
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Enable_GPIO_Clock
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Enable_GPIO_Clock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_Initialize
 </UL>
@@ -1675,15 +1680,15 @@ Local Symbols
 <P><STRONG><a name="[6a]"></a>USART3_Uninitialize</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usart_stm32f4xx.o(.text.USART3_Uninitialize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = USART3_Uninitialize &rArr; USART_Uninitialize &rArr; USART_PowerControl &rArr; HAL_NVIC_DisableIRQ &rArr; __NVIC_DisableIRQ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Uninitialize
+<BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Uninitialize
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[ef]"></a>USART_Uninitialize</STRONG> (Thumb, 192 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART_Uninitialize))
+<P><STRONG><a name="[ed]"></a>USART_Uninitialize</STRONG> (Thumb, 192 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART_Uninitialize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = USART_Uninitialize &rArr; USART_PowerControl &rArr; HAL_NVIC_DisableIRQ &rArr; __NVIC_DisableIRQ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_DeInit
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
+<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_DeInit
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_Uninitialize
 </UL>
@@ -1691,66 +1696,66 @@ Local Symbols
 <P><STRONG><a name="[6b]"></a>USART3_PowerControl</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART3_PowerControl))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = USART3_PowerControl &rArr; USART_PowerControl &rArr; HAL_NVIC_DisableIRQ &rArr; __NVIC_DisableIRQ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[ea]"></a>USART_PowerControl</STRONG> (Thumb, 1118 bytes, Stack size 64 bytes, usart_stm32f4xx.o(.text.USART_PowerControl))
+<P><STRONG><a name="[e8]"></a>USART_PowerControl</STRONG> (Thumb, 1118 bytes, Stack size 64 bytes, usart_stm32f4xx.o(.text.USART_PowerControl))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = USART_PowerControl &rArr; HAL_NVIC_DisableIRQ &rArr; __NVIC_DisableIRQ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_DisableIRQ
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PeripheralReset
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PeripheralReset
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_PowerControl
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Uninitialize
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Uninitialize
 </UL>
 
 <P><STRONG><a name="[6c]"></a>USART3_Send</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART3_Send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = USART3_Send &rArr; USART_Send
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Send
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Send
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[ec]"></a>USART_Send</STRONG> (Thumb, 178 bytes, Stack size 20 bytes, usart_stm32f4xx.o(.text.USART_Send))
+<P><STRONG><a name="[ea]"></a>USART_Send</STRONG> (Thumb, 178 bytes, Stack size 20 bytes, usart_stm32f4xx.o(.text.USART_Send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = USART_Send
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transfer
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive
+<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transfer
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_Send
 </UL>
 
 <P><STRONG><a name="[6d]"></a>USART3_Receive</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART3_Receive))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = USART3_Receive &rArr; USART_Receive &rArr; USART_Send
 </UL>
-<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive
+<BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[eb]"></a>USART_Receive</STRONG> (Thumb, 228 bytes, Stack size 32 bytes, usart_stm32f4xx.o(.text.USART_Receive))
+<P><STRONG><a name="[e9]"></a>USART_Receive</STRONG> (Thumb, 228 bytes, Stack size 32 bytes, usart_stm32f4xx.o(.text.USART_Receive))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = USART_Receive &rArr; USART_Send
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Send
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Send
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transfer
+<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transfer
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_Receive
 </UL>
 
 <P><STRONG><a name="[6e]"></a>USART3_Transfer</STRONG> (Thumb, 32 bytes, Stack size 24 bytes, usart_stm32f4xx.o(.text.USART3_Transfer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = USART3_Transfer &rArr; USART_Transfer &rArr; USART_Receive &rArr; USART_Send
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transfer
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Transfer
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[ee]"></a>USART_Transfer</STRONG> (Thumb, 150 bytes, Stack size 32 bytes, usart_stm32f4xx.o(.text.USART_Transfer))
+<P><STRONG><a name="[ec]"></a>USART_Transfer</STRONG> (Thumb, 150 bytes, Stack size 32 bytes, usart_stm32f4xx.o(.text.USART_Transfer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = USART_Transfer &rArr; USART_Receive &rArr; USART_Send
 </UL>
-<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Send
+<BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Receive
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Send
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_Transfer
 </UL>
@@ -1758,11 +1763,11 @@ Local Symbols
 <P><STRONG><a name="[6f]"></a>USART3_GetTxCount</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usart_stm32f4xx.o(.text.USART3_GetTxCount))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = USART3_GetTxCount &rArr; USART_GetTxCount
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetTxCount
+<BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetTxCount
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[e7]"></a>USART_GetTxCount</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.USART_GetTxCount))
+<P><STRONG><a name="[e5]"></a>USART_GetTxCount</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.USART_GetTxCount))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = USART_GetTxCount
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_GetTxCount
@@ -1771,11 +1776,11 @@ Local Symbols
 <P><STRONG><a name="[70]"></a>USART3_GetRxCount</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, usart_stm32f4xx.o(.text.USART3_GetRxCount))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = USART3_GetRxCount &rArr; USART_GetRxCount
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetRxCount
+<BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetRxCount
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[e5]"></a>USART_GetRxCount</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.USART_GetRxCount))
+<P><STRONG><a name="[e3]"></a>USART_GetRxCount</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.USART_GetRxCount))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = USART_GetRxCount
 </UL>
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_GetRxCount
@@ -1784,31 +1789,31 @@ Local Symbols
 <P><STRONG><a name="[71]"></a>USART3_Control</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART3_Control))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = USART3_Control &rArr; USART_Control &rArr;  USART_Control (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[e2]"></a>USART_Control</STRONG> (Thumb, 3462 bytes, Stack size 136 bytes, usart_stm32f4xx.o(.text.USART_Control))
+<P><STRONG><a name="[e0]"></a>USART_Control</STRONG> (Thumb, 3462 bytes, Stack size 136 bytes, usart_stm32f4xx.o(.text.USART_Control))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200 + In Cycle
 <LI>Call Chain = USART_Control &rArr;  USART_Control (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_DeInit
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_DeInit
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
+<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_Control
 </UL>
 
 <P><STRONG><a name="[72]"></a>USART3_GetStatus</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART3_GetStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USART3_GetStatus &rArr; USART_GetStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetStatus
+<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[e6]"></a>USART_GetStatus</STRONG> (Thumb, 212 bytes, Stack size 8 bytes, usart_stm32f4xx.o(.text.USART_GetStatus))
+<P><STRONG><a name="[e4]"></a>USART_GetStatus</STRONG> (Thumb, 212 bytes, Stack size 8 bytes, usart_stm32f4xx.o(.text.USART_GetStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USART_GetStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_GetStatus
@@ -1817,14 +1822,14 @@ Local Symbols
 <P><STRONG><a name="[73]"></a>USART3_SetModemControl</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART3_SetModemControl))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART3_SetModemControl &rArr; USART_SetModemControl &rArr; HAL_GPIO_WritePin
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetModemControl
+<BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetModemControl
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[ed]"></a>USART_SetModemControl</STRONG> (Thumb, 226 bytes, Stack size 24 bytes, usart_stm32f4xx.o(.text.USART_SetModemControl))
+<P><STRONG><a name="[eb]"></a>USART_SetModemControl</STRONG> (Thumb, 226 bytes, Stack size 24 bytes, usart_stm32f4xx.o(.text.USART_SetModemControl))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = USART_SetModemControl &rArr; HAL_GPIO_WritePin
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_SetModemControl
 </UL>
@@ -1832,40 +1837,40 @@ Local Symbols
 <P><STRONG><a name="[74]"></a>USART3_GetModemStatus</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART3_GetModemStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = USART3_GetModemStatus &rArr; USART_GetModemStatus &rArr; HAL_GPIO_ReadPin
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetModemStatus
+<BR>[Calls]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetModemStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usart_stm32f4xx.o(.rodata.Driver_USART3)
 </UL>
-<P><STRONG><a name="[e4]"></a>USART_GetModemStatus</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART_GetModemStatus))
+<P><STRONG><a name="[e2]"></a>USART_GetModemStatus</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, usart_stm32f4xx.o(.text.USART_GetModemStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USART_GetModemStatus &rArr; HAL_GPIO_ReadPin
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
+<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_GetModemStatus
 </UL>
 
-<P><STRONG><a name="[f1]"></a>Enable_GPIO_Clock</STRONG> (Thumb, 474 bytes, Stack size 40 bytes, usart_stm32f4xx.o(.text.Enable_GPIO_Clock))
+<P><STRONG><a name="[ef]"></a>Enable_GPIO_Clock</STRONG> (Thumb, 474 bytes, Stack size 40 bytes, usart_stm32f4xx.o(.text.Enable_GPIO_Clock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Enable_GPIO_Clock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Initialize
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Initialize
 </UL>
 
-<P><STRONG><a name="[f2]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.__NVIC_ClearPendingIRQ))
+<P><STRONG><a name="[f0]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.__NVIC_ClearPendingIRQ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __NVIC_ClearPendingIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
 </UL>
 
-<P><STRONG><a name="[f3]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.__NVIC_EnableIRQ))
+<P><STRONG><a name="[f1]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 48 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.__NVIC_EnableIRQ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
 </UL>
 
-<P><STRONG><a name="[f4]"></a>USART_PeripheralReset</STRONG> (Thumb, 588 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.USART_PeripheralReset))
+<P><STRONG><a name="[f2]"></a>USART_PeripheralReset</STRONG> (Thumb, 588 bytes, Stack size 4 bytes, usart_stm32f4xx.o(.text.USART_PeripheralReset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = USART_PeripheralReset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PowerControl
 </UL>
 <P>
 <H3>

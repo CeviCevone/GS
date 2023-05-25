@@ -32,7 +32,7 @@ void write_zero(void)
 	wait(10); 
 }
 
-uint32_t read_bit(uint64_t* var, uint32_t shift)
+uint32_t read_bit(uint8_t* var, uint32_t shift)
 {
 	GPIO_Low(); 
 	wait(6); 
@@ -45,16 +45,37 @@ uint32_t read_bit(uint64_t* var, uint32_t shift)
 	return OK; 
 }
 
+uint32_t read_byte(uint8_t* var)
+{
+	for(uint32_t i = 0; i < 8; ++i)
+	{
+		read_bit(var, i); 
+	}
+
+	return 0; 
+}
+
 uint32_t readRom(uint64_t* var)
 {
+	uint8_t bytes[8] = {0};
+	
 	io_reset(); 
 	
 	writeByte(0x33);
 	
-	for(uint32_t i = 0; i < 64; ++i)
+	for(uint32_t i = 0; i < 8; ++i)
 	{
-		read_bit(var,i); 
+		read_byte(&bytes[i]); 
+	} 
+	
+	uint64_t temp = 0; 
+	
+	for(uint32_t i = 0; i < 8; ++i)
+	{
+		temp |= bytes[i] << (i*8); 
 	}
+	
+	*var = temp; 
 	
 	return OK; 
 }

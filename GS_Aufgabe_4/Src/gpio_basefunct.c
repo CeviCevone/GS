@@ -42,18 +42,19 @@ void GPIO_Low(void)
 	GPIOD->BSRR = ((1 << 0) << 16); 
 }
 
-void GPIO_Read(uint64_t *var, uint32_t shift)
+
+void GPIO_Read(uint8_t *var, uint32_t shift)
 {
-	uint64_t temp = (GPIOD->IDR & 0x01); 
-	
-	if(temp)   //test
-	{
-		lcdPrintC('1');
-	}
-	else 
-	{
-		lcdPrintC('0'); 
-	}	//test ende 
+	uint8_t temp = (GPIOD->IDR & 0x01); 
+
+	//if(temp)   //test
+	//{
+	//	lcdPrintC('1');
+	//}
+	//else 
+	//{
+	//	lcdPrintC('0'); 
+	//}	//test ende 
 	
 	*var |= (temp << shift);
 }

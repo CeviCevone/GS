@@ -10,6 +10,6 @@ void GPIO_In(void);
 void GPIO_Out(void); 
 void GPIO_High(void);
 void GPIO_Low(void);
-void GPIO_Read(uint64_t *var, uint32_t shift);
+void GPIO_Read(uint8_t *var, uint32_t shift);
 
 #endif
