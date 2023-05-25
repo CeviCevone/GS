@@ -72,7 +72,7 @@ uint32_t readRom(uint64_t* var)
 	
 	for(uint32_t i = 0; i < 8; ++i)
 	{
-		temp |= bytes[i] << (i*8); 
+		temp |= ((uint64_t) bytes[i]) << (i*8); 
 	}
 	
 	*var = temp; 
@@ -97,7 +97,7 @@ void writeByte(uint8_t byte) //sendet ein byte
 
 uint8_t checkCRC(uint64_t rom, uint32_t bytecount)
 {
-	uint8_t crc = (rom & 0xFF); 
+	uint8_t crc = (uint8_t)(rom >> 56); 
 	uint8_t rescrc = 0; 
 	uint8_t num[8] = {0}; 
 	
@@ -128,7 +128,7 @@ uint8_t checkCRC(uint64_t rom, uint32_t bytecount)
 	
 	for(uint32_t i = 0; i < bytecount; ++i)
 	{
-		rescrc^= num[i]; 
+		rescrc= num[i]; 
 	}
 	
 	return (rescrc == crc); 

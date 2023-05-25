@@ -56,18 +56,27 @@ void demo(void)
 	init_GPIO(); 
 	
 	uint64_t rom = 0; 
-	readRom(&rom); 
+	readRom(&rom);
+
+	//if(!checkCRC(rom,7))
+	//{
+	//	Error_Handler(); 
+	//}
 	
-	if(!checkCRC(rom,7))
+	for(uint32_t i = 0; i < 64; ++i)
 	{
-		Error_Handler(); 
-	}
-	
-	for(uint32_t i; i < 64; ++i)
-	{
-		lcdGotoXY(i,2); 
-		lcdPrintC(rom & (1 << i)); 
-	}
+		uint64_t shift = (((uint64_t) 1) << i);
+		uint64_t var = rom & shift; 
+		
+		if(var)
+		{
+			lcdPrintC('1');
+		}
+		else 
+		{
+			lcdPrintC('0'); 
+		}
+	}	
 }
 	
 // EOF
