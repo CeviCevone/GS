@@ -58,10 +58,10 @@ void demo(void)
 	uint64_t rom = 0; 
 	readRom(&rom);
 
-	//if(!checkCRC(rom,7))
-	//{
-	//	Error_Handler(); 
-	//}
+	if(!checkCRC(rom,7))
+	{
+		Error_Handler(); 
+	}
 	
 	for(uint32_t i = 0; i < 64; ++i)
 	{
