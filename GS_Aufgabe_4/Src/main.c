@@ -35,6 +35,10 @@
 #define ROM_2 0xf900000d87336828
 #define ROM_3 0x800000d872ca428
 
+#define TRUE 0x1
+#define FALSE 0x0
+
+
 void demoRom(void);
 void demoTemp(void);
 void getTemp(uint64_t rom, int16_t* vk, uint16_t* nk);
@@ -107,10 +111,10 @@ void demoTemp(void)
 	uint16_t nk2 = 0; 
 	uint16_t nk3 = 0; 	
 	
-	getTemp(ROM_1,&vk0, &nk0);
+	getTemp(ROM_0,&vk0, &nk0);
 	getTemp(ROM_1,&vk1, &nk1);
-	getTemp(ROM_1,&vk2, &nk2);
-	getTemp(ROM_1,&vk3, &nk3);
+	getTemp(ROM_2,&vk2, &nk2);
+	getTemp(ROM_3,&vk3, &nk3);
 	
 	lcdGotoXY(0,1); 
 	lcdPrintS("Temp0: "); 
@@ -158,6 +162,7 @@ void demoTemp(void)
 void getTemp(uint64_t rom, int16_t* vk, uint16_t* nk)
 {
 	uint8_t temp[9] = {0};
+	uint8_t negative = FALSE; 
 	
 	uint16_t res = 0;  
 	
@@ -171,10 +176,17 @@ void getTemp(uint64_t rom, int16_t* vk, uint16_t* nk)
 	if(res & (0x1 << 15))
 	{
 		res = ~res; 
-		res += 0x1; 
+		res += 0x1;
+			
+		negative = TRUE; 
 	}
 	
 	*vk = res >> 4;
+	
+	if(negative)
+	{
+		*vk = -*vk; 
+	}
 		
 	if(res & (0x1 << 3))
 	{
