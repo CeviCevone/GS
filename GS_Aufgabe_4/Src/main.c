@@ -30,7 +30,14 @@
 #include "timer.h"
 #include "gpio_basefunct.h"
 
-void demo(void); 
+#define ROM_0 0x1700000d8989a128
+#define ROM_1 0x7300000d895c3228
+#define ROM_2 0xf900000d87336828
+#define ROM_3 0x800000d872ca428
+
+void demoRom(void);
+void demoTemp(void);
+void getTemp(uint64_t rom, int16_t *res);
 
 /**
   * @brief  Main program
@@ -46,11 +53,16 @@ int main(void){
 		Error_Handler();
 	}
 	
-	demo(); 
+	//demoRom();
+	while(true)
+	{
+		demoTemp();
+		wait(500000);
+	}
 }
 
 
-void demo(void)
+void demoRom(void)
 {
 	initTimer(); 
 	init_GPIO(); 
@@ -77,6 +89,55 @@ void demo(void)
 			lcdPrintC('0'); 
 		}
 	}	
+}
+	
+
+void demoTemp(void)
+{
+	initTimer(); 
+	init_GPIO();
+	
+	int16_t res0 = 0; 
+	int16_t res1 = 0; 
+	int16_t res2 = 0; 
+	int16_t res3 = 0;
+
+	getTemp(ROM_0,&res0); 
+	getTemp(ROM_1,&res1);
+	getTemp(ROM_2,&res2);
+	getTemp(ROM_3,&res3);
+	
+	lcdGotoXY(0,1); 
+	lcdPrintS("Temp0: "); 
+	lcdPrintInt(res0);
+	
+	lcdGotoXY(0,2); 
+	lcdPrintS("Temp1: "); 
+	lcdPrintInt(res1);
+	
+	lcdGotoXY(0,3); 
+	lcdPrintS("Temp2: "); 
+	lcdPrintInt(res2);
+	
+	lcdGotoXY(0,4); 
+	lcdPrintS("Temp3: "); 
+	lcdPrintInt(res3);
+	
+}
+
+void getTemp(uint64_t rom, int16_t *res)
+{
+	uint8_t temp[9] = {0};
+	
+	readTemp(rom,temp);
+	
+	for(uint32_t i = 0; i < 2; ++i)
+	{
+		*res |= ((int16_t) temp[i]) << (i*8); 
+	}
+	
+	*res /= 16;
+	
 }
 	
 // EOF

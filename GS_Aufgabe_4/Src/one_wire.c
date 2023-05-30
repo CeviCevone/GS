@@ -4,6 +4,11 @@
 #include <stdio.h>
 
 #define OK 0
+#define READ_ROM_COMMAND 0x33
+#define MATCH_ROM_COMMAND 0x55
+#define CONVERT_T_COMMAND 0x44
+#define READ_SCRATCHPAD_COMMAND 0xBE
+
 
 uint32_t io_reset(void)
 {
@@ -61,7 +66,7 @@ uint32_t readRom(uint64_t* var)
 	
 	io_reset(); 
 	
-	writeByte(0x33);
+	writeByte(READ_ROM_COMMAND);
 	
 	for(uint32_t i = 0; i < 8; ++i)
 	{
@@ -150,5 +155,43 @@ uint8_t checkCRC(uint64_t rom, uint32_t bytecount)
 	return (rescrc == crc); 
 }
 	
+
+uint32_t readTemp(uint64_t rom, uint8_t* res)
+{
+	//wähle Slave aus
+	io_reset(); 
+	writeByte(MATCH_ROM_COMMAND); 
 	
+	for(uint32_t i = 0; i < 8; ++i)
+	{
+		uint8_t temp = (uint8_t)((rom >> ((i) * 8)) & 0xFF); 
+		writeByte(temp); 
+	}
+	
+	writeByte(CONVERT_T_COMMAND); 
+	//führe messung durch
+	push_pull();
+	GPIO_High();	
+	wait(750000);
+	GPIO_Low();
+	open_drain(); 
+	GPIO_Out();
+	//wähle slave aus 
+	io_reset();
+	writeByte(MATCH_ROM_COMMAND); 
+	for(uint32_t i = 0; i < 8; ++i)
+	{
+		uint8_t temp = (uint8_t)((rom >> ((i) * 8)) & 0xFF); 
+		writeByte(temp); 
+	}
+	
+	writeByte(READ_SCRATCHPAD_COMMAND); 
+	//lese ergebnis 
+	for(uint32_t i = 0; i < 9; ++i)
+	{
+		read_byte(&res[i]); 
+	} 
+	
+	return OK;
+}
 	

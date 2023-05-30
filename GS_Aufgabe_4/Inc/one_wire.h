@@ -11,5 +11,6 @@ uint32_t readRom(uint64_t* var);
 uint32_t read_byte(uint8_t* var);
 void writeByte(uint8_t byte); //sendet ein byte  
 uint8_t checkCRC(uint64_t rom, uint32_t bytecount);
+uint32_t readTemp(uint64_t rom, uint8_t* res);
 
 #endif
