@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\ITSboard\ITSboard.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\ITSboard\ITSboard.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Tue May 30 15:21:53 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Sun Jun  4 11:32:14 2023
 <BR><P>
 <H3>Maximum Stack Usage =        500 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -490,7 +490,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
-<P><STRONG><a name="[117]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
+<P><STRONG><a name="[118]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
 </UL>
 
@@ -526,11 +526,11 @@ Global Symbols
 <P><STRONG><a name="[136]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[7a]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
-<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<BR><BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
 </UL>
 
 <P><STRONG><a name="[137]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
@@ -553,9 +553,9 @@ Global Symbols
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 </UL>
 
 <P><STRONG><a name="[84]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text), UNUSED)
@@ -670,15 +670,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[115]"></a>GPIO_High</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_High))
-<BR><BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
+<BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
 </UL>
 
 <P><STRONG><a name="[11f]"></a>GPIO_In</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_In))
-<BR><BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
+<BR><BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
 </UL>
 
 <P><STRONG><a name="[93]"></a>GPIO_Init</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, lcd_gpio.o(.text.GPIO_Init))
@@ -690,22 +690,22 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[113]"></a>GPIO_Low</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_Low))
-<BR><BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
+<BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
 </UL>
 
-<P><STRONG><a name="[11c]"></a>GPIO_Out</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_Out))
-<BR><BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
+<P><STRONG><a name="[11d]"></a>GPIO_Out</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.GPIO_Out))
+<BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
 </UL>
 
 <P><STRONG><a name="[120]"></a>GPIO_Read</STRONG> (Thumb, 46 bytes, Stack size 12 bytes, gpio_basefunct.o(.text.GPIO_Read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = GPIO_Read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
+<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
 </UL>
 
 <P><STRONG><a name="[95]"></a>GUI_disChar</STRONG> (Thumb, 188 bytes, Stack size 40 bytes, lcd_gui.o(.text.GUI_disChar))
@@ -1162,13 +1162,13 @@ Global Symbols
 <P><STRONG><a name="[e3]"></a>TP_Adjust</STRONG> (Thumb, 1268 bytes, Stack size 112 bytes, lcd_touch.o(.text.TP_Adjust))
 <BR><BR>[Stack]<UL><LI>Max Depth = 468<LI>Call Chain = TP_Adjust &rArr; TP_ShowInfo &rArr; GUI_drawRectangle &rArr; LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
+<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_ShowInfo
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_DrawCross
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_clear
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Driver_Delay_ms
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_pressed
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;distance
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
 </UL>
@@ -1211,7 +1211,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
-<P><STRONG><a name="[119]"></a>checkVersionFlashFonts</STRONG> (Thumb, 32 bytes, Stack size 4 bytes, fontsflash.o(.text.checkVersionFlashFonts))
+<P><STRONG><a name="[11a]"></a>checkVersionFlashFonts</STRONG> (Thumb, 32 bytes, Stack size 4 bytes, fontsflash.o(.text.checkVersionFlashFonts))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = checkVersionFlashFonts
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1234,16 +1234,16 @@ Global Symbols
 <P><STRONG><a name="[e6]"></a>distance</STRONG> (Thumb, 94 bytes, Stack size 32 bytes, lcd_touch.o(.text.distance))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = distance &rArr; __hardfp_sqrt &rArr; _dsqrt &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abs
+<BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abs
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrt
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Adjust
 </UL>
 
-<P><STRONG><a name="[106]"></a>getTemp</STRONG> (Thumb, 256 bytes, Stack size 48 bytes, main.o(.text.getTemp))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = getTemp &rArr; readTemp &rArr; read_byte &rArr; read_bit &rArr; wait
+<P><STRONG><a name="[106]"></a>getTemp</STRONG> (Thumb, 256 bytes, Stack size 48 bytes, search_and_measure.o(.text.getTemp))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = getTemp &rArr; readTemp &rArr; io_reset &rArr; read_bit &rArr; wait
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
 </UL>
@@ -1273,10 +1273,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demoTemp
 </UL>
 
-<P><STRONG><a name="[112]"></a>io_reset</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, one_wire.o(.text.io_reset))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = io_reset &rArr; wait
+<P><STRONG><a name="[112]"></a>io_reset</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, one_wire.o(.text.io_reset))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = io_reset &rArr; read_bit &rArr; wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
+<BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 </UL>
@@ -1310,7 +1311,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 324<LI>Call Chain = lcdPrintInt &rArr; lcdPrintS &rArr; GUI_drawRectangle &rArr; LCD_fillRectangleMC &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sprintf
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demoTemp
 </UL>
@@ -1320,8 +1321,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
-<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stringCopy
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stringCopy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintInt
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demoTemp
@@ -1333,7 +1334,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;demoTemp
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkVersionFlashFonts
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkVersionFlashFonts
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_init
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
@@ -1357,43 +1358,44 @@ Global Symbols
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
 </UL>
 
-<P><STRONG><a name="[11b]"></a>push_pull</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.push_pull))
+<P><STRONG><a name="[11c]"></a>push_pull</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gpio_basefunct.o(.text.push_pull))
 <BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
 </UL>
 
 <P><STRONG><a name="[10d]"></a>readTemp</STRONG> (Thumb, 270 bytes, Stack size 40 bytes, one_wire.o(.text.readTemp))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = readTemp &rArr; read_byte &rArr; read_bit &rArr; wait
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = readTemp &rArr; io_reset &rArr; read_bit &rArr; wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
-<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_byte
+<BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_byte
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Out
-<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_pull
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Out
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push_pull
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open_drain
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getTemp
 </UL>
 
-<P><STRONG><a name="[11e]"></a>read_bit</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, one_wire.o(.text.read_bit))
+<P><STRONG><a name="[116]"></a>read_bit</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, one_wire.o(.text.read_bit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = read_bit &rArr; wait
 </UL>
 <BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Read
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Low
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Out
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Out
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_In
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_byte
+<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_byte
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
 </UL>
 
-<P><STRONG><a name="[11d]"></a>read_byte</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, one_wire.o(.text.read_byte))
+<P><STRONG><a name="[11e]"></a>read_byte</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, one_wire.o(.text.read_byte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = read_byte &rArr; read_bit &rArr; wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
+<BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
 </UL>
@@ -1407,15 +1409,15 @@ Global Symbols
 <P><STRONG><a name="[114]"></a>wait</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, time.o(.text.wait))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = wait
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
+<BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_one
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_bit
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;io_reset
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readTemp
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[11a]"></a>writeByte</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, one_wire.o(.text.writeByte))
+<P><STRONG><a name="[11b]"></a>writeByte</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, one_wire.o(.text.writeByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = writeByte &rArr; write_zero &rArr; wait
 </UL>
 <BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_zero
@@ -1431,7 +1433,7 @@ Global Symbols
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
+<BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
 </UL>
 
 <P><STRONG><a name="[122]"></a>write_zero</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, one_wire.o(.text.write_zero))
@@ -1441,7 +1443,7 @@ Global Symbols
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_High
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
+<BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeByte
 </UL>
 
 <P><STRONG><a name="[123]"></a>__0sprintf</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
@@ -1455,7 +1457,7 @@ Global Symbols
 
 <P><STRONG><a name="[13d]"></a>__c89sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
 
-<P><STRONG><a name="[116]"></a>sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf))
+<P><STRONG><a name="[117]"></a>sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintInt
@@ -1792,7 +1794,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 
-<P><STRONG><a name="[118]"></a>stringCopy</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, lcd.o(.text.stringCopy))
+<P><STRONG><a name="[119]"></a>stringCopy</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, lcd.o(.text.stringCopy))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = stringCopy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS

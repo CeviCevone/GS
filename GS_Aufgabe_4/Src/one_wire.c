@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #define OK 0
+#define ERR 1
 #define READ_ROM_COMMAND 0x33
 #define MATCH_ROM_COMMAND 0x55
 #define CONVERT_T_COMMAND 0x44
@@ -12,11 +13,15 @@
 
 uint32_t io_reset(void)
 {
+	uint8_t var = 0; 
 	GPIO_Low(); //bus low 
 	wait(480); 
 	GPIO_High(); //bus freigeben 
 	wait(70); 
-	//Busabfrage ? 
+	if(read_bit(&var,0))
+	{
+		return ERR; 
+	}
 	wait(410); 
 	return OK; 
 }
@@ -190,8 +195,9 @@ uint32_t readTemp(uint64_t rom, uint8_t* res)
 	for(uint32_t i = 0; i < 9; ++i)
 	{
 		read_byte(&res[i]); 
-	} 
-	
+	} 	
 	return OK;
 }
+
+
 	
