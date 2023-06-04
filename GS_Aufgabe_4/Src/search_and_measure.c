@@ -11,7 +11,7 @@
 #define END_OF_ROM 64
 
 
-static uint8_t LastDeviceFlag = 0;
+static uint8_t LastDeviceFlag = FALSE;
 static uint32_t LastDiscrepancy = 0; 
 static uint32_t LastFamilyDiscrepancy = 0; 
  
@@ -39,7 +39,7 @@ uint8_t searchRom(uint64_t* rom)
 		return FALSE; 
 	}
 	
-	id_bit_number = 1; 
+	id_bit_number = 0; 
 	last_zero = 0; 
 	
 	writeByte(SEARCH_COMMAND); 
@@ -100,7 +100,7 @@ uint8_t searchRom(uint64_t* rom)
 		++id_bit_number; 
 	
 	}
-	while(!(id_bit_number > END_OF_ROM)); 
+	while(id_bit_number < END_OF_ROM); 
 	
 	LastDiscrepancy = last_zero; 
 	
@@ -110,6 +110,7 @@ uint8_t searchRom(uint64_t* rom)
 	}
 	if(checkCRC(rom_no,7))
 	{
+		*rom = rom_no;
 		return TRUE; 
 	}
 	else 
