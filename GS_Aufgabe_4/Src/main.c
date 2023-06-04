@@ -42,7 +42,7 @@
 
 void demoRom(void);
 void demoTemp(void);
-void getTemp(uint64_t rom, int16_t* vk, uint16_t* nk);
+void testSearch(void);
 
 /**
   * @brief  Main program
@@ -61,12 +61,37 @@ int main(void){
 	//demoRom();
 	while(true)
 	{
-		demoTemp();
+		testSearch();
 		wait(500000);
 	}
 }
 
 
+void testSearch(void)
+{
+	initTimer(); 
+	init_GPIO(); 
+	uint64_t testRom = 0; 
+	
+	if(searchRom(&testRom))
+	{
+		int16_t vk = 0; 
+		uint16_t nk = 0;
+		getTemp(testRom, &vk,&nk); 
+	
+		lcdGotoXY(0,1); 
+		lcdPrintS("Temp: "); 
+		lcdPrintInt(vk);
+		lcdPrintC('.'); 
+		if(nk < 1000)
+		{
+			lcdPrintC('0');
+		}
+		lcdPrintInt(nk);
+	}
+}
+	
+	
 void demoRom(void)
 {
 	initTimer(); 
