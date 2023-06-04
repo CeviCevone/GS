@@ -717,6 +717,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\search_and_measure.c</FilePath>
             </File>
+            <File>
+              <FileName>output.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\output.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -986,6 +991,11 @@
               <FileName>search_and_measure.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\search_and_measure.h</FilePath>
+            </File>
+            <File>
+              <FileName>output.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\output.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1714,6 +1724,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\search_and_measure.c</FilePath>
             </File>
+            <File>
+              <FileName>output.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\output.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1983,6 +1998,11 @@
               <FileName>search_and_measure.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\search_and_measure.h</FilePath>
+            </File>
+            <File>
+              <FileName>output.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\output.h</FilePath>
             </File>
           </Files>
         </Group>

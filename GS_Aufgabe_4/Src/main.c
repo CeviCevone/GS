@@ -30,6 +30,7 @@
 #include "timer.h"
 #include "gpio_basefunct.h"
 #include "search_and_measure.h"
+#include "output.h"
 
 #define ROM_0 0x1700000d8989a128
 #define ROM_1 0x7300000d895c3228
@@ -38,11 +39,11 @@
 
 #define TRUE 0x1
 #define FALSE 0x0
-
+#define MAX_NUM_ROM 4
 
 void demoRom(void);
 void demoTemp(void);
-void testSearch(void);
+void search_and_read(void);
 
 /**
   * @brief  Main program
@@ -58,41 +59,37 @@ int main(void){
 		Error_Handler();
 	}
 	
-	//demoRom();
-	while(true)
-	{
-		testSearch();
-		wait(500000);
-	}
+	search_and_read();
 }
 
-
-void testSearch(void)
+void search_and_read(void)
 {
+	uint64_t rom[MAX_NUM_ROM] = {0}; 
+	uint32_t numRom = 0; 
+	int16_t vk = 0; 
+	uint16_t nk = 0; 
 	initTimer(); 
-	init_GPIO(); 
-	uint64_t testRom = 0; 
-	
-	if(searchRom(&testRom))
+	init_GPIO();
+	searchAllROM(rom,&numRom); 
+	if(0 == numRom)
 	{
-		int16_t vk = 0; 
-		uint16_t nk = 0;
-		getTemp(testRom, &vk,&nk); 
-	
-		lcdGotoXY(0,1); 
-		lcdPrintS("Temp: "); 
-		lcdPrintInt(vk);
-		lcdPrintC('.'); 
-		if(nk < 1000)
+		lcdPrintS("ERROR: no devices found");
+	}
+	lcdInitTemp(numRom);
+	while(TRUE)
+	{
+		for(uint32_t i = 0; i < numRom; ++i)
 		{
-			lcdPrintC('0');
+			getTemp(rom[i], &vk, &nk);
+			lcdPrintTemp(vk,nk,i);
 		}
-		lcdPrintInt(nk);
 	}
 }
+
+
+
 	
-	
-void demoRom(void)
+void demoRom(void) //Teilaufgabe 1
 {
 	initTimer(); 
 	init_GPIO(); 
@@ -122,7 +119,7 @@ void demoRom(void)
 }
 	
 
-void demoTemp(void)
+void demoTemp(void) //Teilaufgabe 2
 {
 	initTimer(); 
 	init_GPIO();

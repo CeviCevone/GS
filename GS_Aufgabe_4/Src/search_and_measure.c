@@ -9,6 +9,7 @@
 #define BIT_SET 1
 #define BIT_NOT_SET 0
 #define END_OF_ROM 64
+#define MAX_NUM_ROM 4 
 
 
 static uint8_t LastDeviceFlag = FALSE;
@@ -173,4 +174,19 @@ void getTemp(uint64_t rom, int16_t* vk, uint16_t* nk)
 	{
 		*nk += 625; 
 	}
+}
+
+void searchAllROM(uint64_t* rom, uint32_t* numRom)
+{
+	for(uint32_t i = 0; i < MAX_NUM_ROM; ++i)
+	{
+		if(searchRom(&rom[i]))
+		{
+			*numRom += 1; 
+		}
+		else 
+		{
+			return;
+		}
+	}	
 }

@@ -54,4 +54,4 @@
   ..\..\ITS_BRD_LIB\Utilities\AddFonts\fontsFLASH.h \
   ..\..\DisplayWaveshare\Inc\LCD_Touch.h ..\..\ITS_BRD_LIB\Inc\error.h \
   Inc\one_wire.h Inc\time.h ..\..\ITS_BRD_LIB\Inc\timer.h \
-  Inc\gpio_basefunct.h Inc\search_and_measure.h
+  Inc\gpio_basefunct.h Inc\search_and_measure.h Inc\output.h

@@ -19,6 +19,7 @@
 ".\itsboard\gpio_basefunct.o"
 ".\itsboard\one_wire.o"
 ".\itsboard\search_and_measure.o"
+".\itsboard\output.o"
 ".\itsboard\font8.o"
 ".\itsboard\font12.o"
 ".\itsboard\font16.o"
