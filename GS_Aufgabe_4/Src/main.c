@@ -40,6 +40,7 @@
 #define TRUE 0x1
 #define FALSE 0x0
 #define MAX_NUM_ROM 4
+#define NO_DEVICES 0
 
 void demoRom(void);
 void demoTemp(void);
@@ -71,7 +72,7 @@ void search_and_read(void)
 	initTimer(); 
 	init_GPIO();
 	searchAllROM(rom,&numRom); 
-	if(0 == numRom)
+	if(NO_DEVICES == numRom) //wenn keine sensoren angeschlossen -> fehler
 	{
 		lcdPrintS("ERROR: no devices found");
 	}

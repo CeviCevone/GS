@@ -10,7 +10,18 @@
 #define BIT_NOT_SET 0
 #define END_OF_ROM 64
 #define MAX_NUM_ROM 4 
-
+#define SRATCHPAD_SIZE 9
+#define BITS_PER_BYTE 8
+#define SIGNED_BIT (0x1 << 15)
+#define INTEGER_PART 4
+#define FIRST_DECIMAL_DIGIT (0x1 << 3)
+#define SECOND_DECIMAL_DIGIT (0x1 << 2)
+#define THIRD_DECIMAL_DIGIT (0x1 << 1)
+#define FOURTH_DECIMAL_DIGIT (0x1 << 0)
+#define FIRST_DECIMAL_DIGIT_VALUE 5000
+#define SECOND_DECIMAL_DIGIT_VALUE 2500
+#define THIRD_DECIMAL_DIGIT_VALUE 1250
+#define FOURTH_DECIMAL_DIGIT_VALUE 625
 
 static uint8_t LastDeviceFlag = FALSE;
 static uint32_t LastDiscrepancy = 0; 
@@ -131,7 +142,7 @@ uint8_t resetSearch()
 
 void getTemp(uint64_t rom, int16_t* vk, uint16_t* nk)
 {
-	uint8_t temp[9] = {0};
+	uint8_t temp[SRATCHPAD_SIZE] = {0};
 	uint8_t negative = FALSE; 
 	
 	uint16_t res = 0;  
@@ -140,39 +151,39 @@ void getTemp(uint64_t rom, int16_t* vk, uint16_t* nk)
 	
 	for(uint32_t i = 0; i < 2; ++i)
 	{
-		res |= ((int16_t) temp[i]) << (i*8); 
+		res |= ((int16_t) temp[i]) << (i* BITS_PER_BYTE); //extrahiert erste 2 byte mit der temperatur info 
 	}
 	
-	if(res & (0x1 << 15))
+	if(res & SIGNED_BIT)
 	{
 		res = ~res; 
-		res += 0x1;
+		res += 0x1; //tauscht das vorzeichen von res 
 			
 		negative = TRUE; 
 	}
 	
-	*vk = res >> 4;
+	*vk = res >> INTEGER_PART;
 	
 	if(negative)
 	{
-		*vk = -*vk; 
+		*vk = -*vk; // da vorkomma signed 
 	}
 		
-	if(res & (0x1 << 3))
+	if(res & FIRST_DECIMAL_DIGIT) //wandelt binär nachkomma in integer um 
 	{
-		*nk += 5000; 
+		*nk += FIRST_DECIMAL_DIGIT_VALUE; 
 	}
-	if(res & (0x1 << 2))
+	if(res & SECOND_DECIMAL_DIGIT)
 	{
-		*nk += 2500; 
+		*nk += SECOND_DECIMAL_DIGIT_VALUE; 
 	}
-	if(res & (0x1 << 1))
+	if(res & THIRD_DECIMAL_DIGIT)
 	{
-		*nk += 1250; 
+		*nk += THIRD_DECIMAL_DIGIT_VALUE; 
 	}
-	if(res & (0x1 << 0))
+	if(res & FOURTH_DECIMAL_DIGIT)
 	{
-		*nk += 625; 
+		*nk += FOURTH_DECIMAL_DIGIT_VALUE; 
 	}
 }
 
