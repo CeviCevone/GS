@@ -9,6 +9,12 @@
 #define MATCH_ROM_COMMAND 0x55
 #define CONVERT_T_COMMAND 0x44
 #define READ_SCRATCHPAD_COMMAND 0xBE
+#define BIT_MASK 0xFF
+#define NUM_BITS_PER_BYTE 8
+#define BIT_SET 1 
+#define ROM_CRC_SHIFT 56
+#define BYTES_PER_ROM 8
+#define SCRATCHPAD_BYTES 9
 
 
 uint32_t io_reset(void)
@@ -57,7 +63,7 @@ uint32_t read_bit(uint8_t* var, uint32_t shift)
 
 uint32_t read_byte(uint8_t* var)
 {
-	for(uint32_t i = 0; i < 8; ++i)
+	for(uint32_t i = 0; i < NUM_BITS_PER_BYTE; ++i)
 	{
 		read_bit(var, i); 
 	}
@@ -67,22 +73,22 @@ uint32_t read_byte(uint8_t* var)
 
 uint32_t readRom(uint64_t* var)
 {
-	uint8_t bytes[8] = {0};
+	uint8_t bytes[BYTES_PER_ROM] = {0};
 	
 	io_reset(); 
 	
 	writeByte(READ_ROM_COMMAND);
 	
-	for(uint32_t i = 0; i < 8; ++i)
+	for(uint32_t i = 0; i < BYTES_PER_ROM; ++i)
 	{
 		read_byte(&bytes[i]); 
 	} 
 	
 	uint64_t temp = 0; 
 	
-	for(uint32_t i = 0; i < 8; ++i)
+	for(uint32_t i = 0; i < BYTES_PER_ROM; ++i)
 	{
-		temp |= ((uint64_t) bytes[i]) << (i*8); 
+		temp |= ((uint64_t) bytes[i]) << (i*NUM_BITS_PER_BYTE); 
 	}
 	
 	*var = temp; 
@@ -92,9 +98,9 @@ uint32_t readRom(uint64_t* var)
 
 void writeByte(uint8_t byte) //sendet ein byte  
 {
-	for(uint32_t i = 0; i < 8; ++i) //für jedes bit 
+	for(uint32_t i = 0; i < NUM_BITS_PER_BYTE; ++i) //für jedes bit 
 	{
-		if((byte >> i) & 1) //wenn bit == 1 -> sende 1 
+		if((byte >> i) & BIT_SET) //wenn bit == 1 -> sende 1 
 		{
 			write_one(); 
 		}
@@ -107,13 +113,13 @@ void writeByte(uint8_t byte) //sendet ein byte
 
 uint8_t checkCRC(uint64_t rom, uint32_t bytecount)
 {
-	uint8_t crc = (uint8_t)(rom >> 56); 
+	uint8_t crc = (uint8_t)(rom >> ROM_CRC_SHIFT); 
 	uint8_t rescrc = 0; 
-	uint8_t num[7] = {0}; 
+	uint8_t num[7] = {0}; //7 lässt sich nicht durch bytecount ersetzen 
 	
 	for(uint32_t i = 0; i < bytecount; ++i)
 	{ 
-		num[i] = (uint8_t)((rom >> ((i) * 8)) & 0xFF);
+		num[i] = (uint8_t)((rom >> ((i) * NUM_BITS_PER_BYTE)) & BIT_MASK);
 	}
 	
 	const uint8_t table[256] = 
@@ -167,9 +173,9 @@ uint32_t readTemp(uint64_t rom, uint8_t* res)
 	io_reset(); 
 	writeByte(MATCH_ROM_COMMAND); 
 	
-	for(uint32_t i = 0; i < 8; ++i)
+	for(uint32_t i = 0; i < BYTES_PER_ROM; ++i)
 	{
-		uint8_t temp = (uint8_t)((rom >> ((i) * 8)) & 0xFF); 
+		uint8_t temp = (uint8_t)((rom >> ((i) * NUM_BITS_PER_BYTE)) & BIT_MASK); 
 		writeByte(temp); 
 	}
 	
@@ -184,15 +190,15 @@ uint32_t readTemp(uint64_t rom, uint8_t* res)
 	//wähle slave aus 
 	io_reset();
 	writeByte(MATCH_ROM_COMMAND); 
-	for(uint32_t i = 0; i < 8; ++i)
+	for(uint32_t i = 0; i < BYTES_PER_ROM; ++i)
 	{
-		uint8_t temp = (uint8_t)((rom >> ((i) * 8)) & 0xFF); 
+		uint8_t temp = (uint8_t)((rom >> ((i) * NUM_BITS_PER_BYTE)) & BIT_MASK); 
 		writeByte(temp); 
 	}
 	
 	writeByte(READ_SCRATCHPAD_COMMAND); 
 	//lese ergebnis 
-	for(uint32_t i = 0; i < 9; ++i)
+	for(uint32_t i = 0; i < SCRATCHPAD_BYTES; ++i)
 	{
 		read_byte(&res[i]); 
 	} 	
