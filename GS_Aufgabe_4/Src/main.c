@@ -121,6 +121,7 @@ void demoRom(void) //Teilaufgabe 1
 	
 
 void demoTemp(void) //Teilaufgabe 2
+
 {
 	initTimer(); 
 	init_GPIO();

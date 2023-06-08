@@ -1,5 +1,6 @@
 #include "search_and_measure.h"
 #include "one_wire.h"
+#include "lcd.h"
 
 #define FALSE 0
 #define TRUE 1
@@ -30,7 +31,7 @@ static uint32_t LastFamilyDiscrepancy = 0;
 
 uint8_t resetSearch(); 
 
-uint8_t searchRom(uint64_t* rom)
+uint8_t searchRom(uint64_t* rom, uint64_t rom_old)
 { 
 	uint64_t rom_no = 0;
 	uint8_t cmp_id_bit = 0; 
@@ -51,7 +52,7 @@ uint8_t searchRom(uint64_t* rom)
 		return FALSE; 
 	}
 	
-	id_bit_number = 0; 
+	id_bit_number = 1; 
 	last_zero = 0; 
 	
 	writeByte(SEARCH_COMMAND); 
@@ -82,9 +83,11 @@ uint8_t searchRom(uint64_t* rom)
 			}
 			else 
 			{
-				search_direction = (rom_no & (((uint64_t) BIT_SET )<< id_bit_number));
+				search_direction = (1 &(rom_old >> (id_bit_number-1)));
 			}
 		
+			
+			
 			if(0 == search_direction)
 			{
 				last_zero = id_bit_number; 
@@ -99,7 +102,9 @@ uint8_t searchRom(uint64_t* rom)
 		{
 			search_direction = id_bit; 
 		}
-		rom_no |= (((uint64_t) search_direction) << id_bit_number);
+		
+		lcdPrintC(search_direction+'0');
+		rom_no |= (((uint64_t) search_direction) << (id_bit_number-1));
 	
 		if(search_direction)
 		{
@@ -112,9 +117,15 @@ uint8_t searchRom(uint64_t* rom)
 		++id_bit_number; 
 	
 	}
-	while(id_bit_number < END_OF_ROM); 
+	while(id_bit_number <= END_OF_ROM); 
 	
+	lcdPrintlnS(" ");
+	
+	lcdPrintInt(LastDiscrepancy);
+	lcdPrintC('_');
 	LastDiscrepancy = last_zero; 
+	lcdPrintInt(last_zero);
+	lcdPrintlnS(" ");
 	
 	if(FALSE == LastDiscrepancy)
 	{
@@ -191,7 +202,13 @@ void searchAllROM(uint64_t* rom, uint32_t* numRom)
 {
 	for(uint32_t i = 0; i < MAX_NUM_ROM; ++i)
 	{
-		if(searchRom(&rom[i]))
+		uint64_t old_rom = 0; 
+		if(i)
+		{
+			old_rom = rom[i-1]; 
+		}
+		
+		if(searchRom(&rom[i], old_rom))
 		{
 			*numRom += 1; 
 		}
