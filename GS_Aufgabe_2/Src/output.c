@@ -54,7 +54,7 @@ int32_t printTicks(void)
 	GPIOD->BSRR = (TICK_BIT_MASK << 16);
 	GPIOD->BSRR = (i & TICK_BIT_MASK); //letzte 8 bits von i 
 	return OK; 
-}
+} 
 /**
   * @brief  initialisiert das Display 
   * @param  None

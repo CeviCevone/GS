@@ -32,33 +32,56 @@
 #define D20 1 << 4
 #define TRUE 1
 
+volatile int32_t currentState = 0;
+volatile int32_t buttons = 0;
+volatile uint32_t time = 0;
+volatile int32_t phase = 0;
+
+void initInterrupts(void); 
+
+void EXTI2_IRQHandler(void)
+{
+    fetch(&time,&currentState,&buttons);
+		detectPhase(&phase, currentState);
+
+    // Clear interrupt flag
+    EXTI->PR |= EXTI_PR_PR2;
+}
+
+void EXTI1_IRQHandler(void)
+{
+    fetch(&time,&currentState,&buttons);
+		detectPhase(&phase, currentState);
+    
+		// Clear interrupt flag
+    EXTI->PR |= EXTI_PR_PR1;
+}
+
+
 /**
   * @brief  Main program
   * @param  None
   * @retval None
   */
-int32_t main(void){
+int main(void){
 	
 	init();  
+	initInterrupts();
 	
-	int32_t phase = 0; 
-	int32_t currentState = 0;
 	int32_t angVel = 0;
-	uint32_t time = 0;
 	int32_t angle = 0; 
 	int32_t buttons = 0; 
 
 	while(TRUE)
 	{	
+		
 		//daten Auslesen
-		//GPIOE->BSRR = D20; 
-		fetch(&time,&currentState,&buttons); // 750 ns 
-		//GPIOE->BSRR = D20 << 16;
+		fetch(&time,&currentState,&buttons); // 200 ns 
 		//zustände ändern
 		
+		GPIOE->BSRR = D20; //zeitmessung
 		
-		
-		if(detectPhase(&phase, currentState)) //650 ns
+		if(detectPhase(&phase, currentState)) //276 ns
 		{
 			//fehlerhandling
 			errorHandler();
@@ -66,24 +89,60 @@ int32_t main(void){
 		
 		
 		
-		if(!(S7 & buttons)) //sehr schnell
+		
+		if(!(S7 & buttons)) //65ns - 122ns
 		{
 			resetTicks();
 		}	
 		
-	  totalAngle(&angle); 
+		
+	  totalAngle(&angle); //90ns
 		
 		
-		if(TOLERANCE >= (time % TICKS_PER_SECOND)) //1 mikrosec
+		if(TOLERANCE >= (time % TICKS_PER_SECOND))
 		{
-			deltaAngle(&angVel);
-			printValues(angle,angVel);
+			deltaAngle(&angVel, time);
+			printValues(angle,angVel); //7 micro sec - 7,7ms
 		}
 		
-		//ausgabe
-		setDirectionalLed(phase); //600 ns
+		//ausgabe 314ns 
+		
+		setDirectionalLed(phase);
 		printTicks();
+		
+		GPIOE->BSRR = (D20 << 16);
+		
+
 	}
 }
 
+void initInterrupts(void)
+{
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOGEN; //schalte clock ein 
+	RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN; 
+	
+	SYSCFG->EXTICR[0] &= ~(0x0f << (4*0));
+	SYSCFG->EXTICR[0] |= 0x06 << (4*0);
+	
+	SYSCFG->EXTICR[0] &= ~(0x0f << (4*1));
+	SYSCFG->EXTICR[0] |= 0x06 << (4*1);
+	
+	EXTI->RTSR |= (1<<1); 
+	EXTI->FTSR |= (1<<1); 
+	EXTI->IMR |= (1<<1); 
+	
+	EXTI->RTSR |= (1<<2); 
+	EXTI->FTSR |= (1<<2);
+	EXTI->IMR |= (1<<2); 
+	
+	NVIC_SetPriorityGrouping(2); // Setup interrupt controller: // 4 subpriority for each priority
+	NVIC_SetPriority(EXTI2_IRQn, 8); // Setup EXTI2: // priority = 2, subpriority = 0 // Enable EXTI2
+	NVIC_EnableIRQ(EXTI2_IRQn);
+	
+	NVIC_SetPriorityGrouping(2); // Setup interrupt controller: // 4 subpriority for each priority
+	NVIC_SetPriority(EXTI1_IRQn, 8); // Setup EXTI2: // priority = 2, subpriority = 0 // Enable EXTI2
+	NVIC_EnableIRQ(EXTI1_IRQn);
+	
+	
+}
 // EOF

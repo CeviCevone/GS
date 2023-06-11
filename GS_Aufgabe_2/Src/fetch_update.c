@@ -15,16 +15,17 @@ static int32_t init = true;
 static int32_t lastState = 0; 
 static int32_t ticks = 0;  
 static int32_t lastTicks = 0; 
+static uint32_t timeold = 0; 
 
 /**
   * @brief  Liest die aktuellen Werte aus 
   * @param  time - der Wert des Timers, currentState - der Zustand, buttons - das Bitmuster der Knöpfe 
   * @retval none 
   */
-int32_t fetch(uint32_t* time, int32_t* currentState, int32_t* buttons)
+int32_t fetch(volatile uint32_t* time,volatile int32_t* currentState,volatile int32_t* buttons)
 {
 	*time = TIM2->CNT; 
-	*currentState = (GPIOF->IDR & MASK_PIN_0_1); //letzte 2 bits der Eingabe holen 
+	*currentState = (GPIOG->IDR & MASK_PIN_0_1); //letzte 2 bits der Eingabe holen 
 	*buttons = GPIOF->IDR;		
 	return OK; 
 }
@@ -34,7 +35,7 @@ int32_t fetch(uint32_t* time, int32_t* currentState, int32_t* buttons)
   * @param  i - die Rückgabe liefert die Phase, currentState - der aktuelle Zustand
   * @retval 1 - falls eine Phase übersprungen wurde
   */
-int32_t detectPhase(int32_t* i,int32_t currentState)
+int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState)
 {	
 	if(init)
 	{
@@ -143,9 +144,11 @@ int32_t detectPhase(int32_t* i,int32_t currentState)
   * @param  i - die Rückgabe
   * @retval None
   */
-int32_t deltaAngle(int32_t* i)
+int32_t deltaAngle(int32_t* i, uint32_t time)
 {
-	*i = 3*(ticks - lastTicks); 
+	//*i = ((10*(ticks -lastTicks)) /(3*(time - timeold)))*90000000 ; 
+	//timeold = time;
+	*i = 3*(ticks-lastTicks);
 	lastTicks = ticks;
 	return OK; 
 }
