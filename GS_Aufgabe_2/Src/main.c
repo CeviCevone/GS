@@ -41,20 +41,24 @@ void initInterrupts(void);
 
 void EXTI2_IRQHandler(void)
 {
+		EXTI->PR |= (1<<2);
     fetch(&time,&currentState,&buttons);
-		detectPhase(&phase, currentState);
-
-    // Clear interrupt flag
-    EXTI->PR |= EXTI_PR_PR2;
+		if(detectPhase(&phase, currentState)) //276 ns
+		{
+			//fehlerhandling
+			errorHandler();
+		}
 }
 
 void EXTI1_IRQHandler(void)
 {
+		EXTI->PR |= (1<<1);
     fetch(&time,&currentState,&buttons);
-		detectPhase(&phase, currentState);
-    
-		// Clear interrupt flag
-    EXTI->PR |= EXTI_PR_PR1;
+		if(detectPhase(&phase, currentState)) //276 ns
+		{
+			//fehlerhandling
+			errorHandler();
+		}
 }
 
 
@@ -74,30 +78,12 @@ int main(void){
 
 	while(TRUE)
 	{	
-		
-		//daten Auslesen
-		fetch(&time,&currentState,&buttons); // 200 ns 
-		//zustände ändern
-		
-		GPIOE->BSRR = D20; //zeitmessung
-		
-		if(detectPhase(&phase, currentState)) //276 ns
-		{
-			//fehlerhandling
-			errorHandler();
-		}
-		
-		
-		
-		
 		if(!(S7 & buttons)) //65ns - 122ns
 		{
 			resetTicks();
 		}	
 		
-		
 	  totalAngle(&angle); //90ns
-		
 		
 		if(TOLERANCE >= (time % TICKS_PER_SECOND))
 		{
@@ -109,10 +95,6 @@ int main(void){
 		
 		setDirectionalLed(phase);
 		printTicks();
-		
-		GPIOE->BSRR = (D20 << 16);
-		
-
 	}
 }
 
@@ -127,13 +109,13 @@ void initInterrupts(void)
 	SYSCFG->EXTICR[0] &= ~(0x0f << (4*1));
 	SYSCFG->EXTICR[0] |= 0x06 << (4*1);
 	
-	EXTI->RTSR |= (1<<1); 
-	EXTI->FTSR |= (1<<1); 
-	EXTI->IMR |= (1<<1); 
+	EXTI->RTSR |= (1<<0); 
+	EXTI->FTSR |= (1<<0); 
+	EXTI->IMR |= (1<<0); 
 	
-	EXTI->RTSR |= (1<<2); 
-	EXTI->FTSR |= (1<<2);
-	EXTI->IMR |= (1<<2); 
+	EXTI->RTSR |= (1<<1); 
+	EXTI->FTSR |= (1<<1);
+	EXTI->IMR |= (1<<1); 
 	
 	NVIC_SetPriorityGrouping(2); // Setup interrupt controller: // 4 subpriority for each priority
 	NVIC_SetPriority(EXTI2_IRQn, 8); // Setup EXTI2: // priority = 2, subpriority = 0 // Enable EXTI2
@@ -142,7 +124,5 @@ void initInterrupts(void)
 	NVIC_SetPriorityGrouping(2); // Setup interrupt controller: // 4 subpriority for each priority
 	NVIC_SetPriority(EXTI1_IRQn, 8); // Setup EXTI2: // priority = 2, subpriority = 0 // Enable EXTI2
 	NVIC_EnableIRQ(EXTI1_IRQn);
-	
-	
 }
 // EOF

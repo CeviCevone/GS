@@ -11,11 +11,11 @@
 #define false 0
 #define MASK_PIN_0_1 0b11
 
-static int32_t init = true; 
-static int32_t lastState = 0; 
-static int32_t ticks = 0;  
-static int32_t lastTicks = 0; 
-static uint32_t timeold = 0; 
+volatile int32_t isinit = true; 
+volatile int32_t lastState = 0; 
+volatile int32_t ticks = 0;  
+volatile int32_t lastTicks = 0; 
+volatile uint32_t timeold = 0; 
 
 /**
   * @brief  Liest die aktuellen Werte aus 
@@ -37,10 +37,10 @@ int32_t fetch(volatile uint32_t* time,volatile int32_t* currentState,volatile in
   */
 int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState)
 {	
-	if(init)
+	if(isinit)
 	{
 		lastState = currentState;
-		init = false; 
+		isinit = false; 
 	}
 	
 	switch(lastState) //anhand des Letzten und des aktuellen Zustands die Phase ermitteln
@@ -171,7 +171,7 @@ int32_t totalAngle(int32_t* i)
   */
 int32_t resetTicks(void)
 {
-	init = true; 
+	isinit = true; 
 	ticks = 0; 
 	lastTicks = 0; 
 	return OK; 
