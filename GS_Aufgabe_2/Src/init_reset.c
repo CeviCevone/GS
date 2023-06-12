@@ -31,7 +31,6 @@ int32_t init(void)
 	
 	initDisplay();
 	initTimer();
-	resetTicks();
 	
 	return OK; 
 }
@@ -45,6 +44,5 @@ int32_t reset(void)
 {
 	initDisplay();
 	initTimer();
-	resetTicks();
 	return OK; 
 }

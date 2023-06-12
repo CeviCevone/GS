@@ -25,6 +25,7 @@
 #include "errorhandling.h"
 #include "output.h"
 #include <stdint.h> 
+#include "interrupt.h"
 
 #define S7 1<<7
 #define TICKS_PER_SECOND 90000000
@@ -36,17 +37,19 @@ volatile int32_t currentState = 0;
 volatile int32_t buttons = 0;
 volatile uint32_t time = 0;
 volatile int32_t phase = 0;
+volatile int32_t ticks = 0;  
+volatile int32_t angVel = 0;
+volatile int32_t angle = 0; 
 
-void initInterrupts(void); 
-
-void EXTI2_IRQHandler(void)
+void EXTI0_IRQHandler(void)
 {
-		EXTI->PR |= (1<<2);
+		EXTI->PR |= (1<<0);
     fetch(&time,&currentState,&buttons);
-		if(detectPhase(&phase, currentState)) //276 ns
+		if(detectPhase(&phase, currentState,&ticks)) //276 ns
 		{
 			//fehlerhandling
 			errorHandler();
+			resetTicks(&ticks);
 		}
 }
 
@@ -54,10 +57,11 @@ void EXTI1_IRQHandler(void)
 {
 		EXTI->PR |= (1<<1);
     fetch(&time,&currentState,&buttons);
-		if(detectPhase(&phase, currentState)) //276 ns
+		if(detectPhase(&phase, currentState, &ticks)) //276 ns
 		{
 			//fehlerhandling
 			errorHandler();
+			resetTicks(&ticks);
 		}
 }
 
@@ -69,32 +73,41 @@ void EXTI1_IRQHandler(void)
   */
 int main(void){
 	
-	init();  
+	init(); 
+	resetTicks(&ticks);
 	initInterrupts();
 	
-	int32_t angVel = 0;
-	int32_t angle = 0; 
-	int32_t buttons = 0; 
 
 	while(TRUE)
 	{	
+		fetch(&time,&currentState,&buttons);
+		
+		if(detectPhase(&phase, currentState,&ticks)) //276 ns
+		{
+			//fehlerhandling
+			errorHandler();
+			resetTicks(&ticks);
+		}
+		
 		if(!(S7 & buttons)) //65ns - 122ns
 		{
-			resetTicks();
+			resetTicks(&ticks);
 		}	
 		
-	  totalAngle(&angle); //90ns
+	  totalAngle(&angle,&ticks); //90ns
+		
+		
 		
 		if(TOLERANCE >= (time % TICKS_PER_SECOND))
 		{
-			deltaAngle(&angVel, time);
 			printValues(angle,angVel); //7 micro sec - 7,7ms
+			deltaAngle(&angVel, time,&ticks);
 		}
 		
 		//ausgabe 314ns 
 		
 		setDirectionalLed(phase);
-		printTicks();
+		printTicks(&ticks);
 	}
 }
 
@@ -118,8 +131,8 @@ void initInterrupts(void)
 	EXTI->IMR |= (1<<1); 
 	
 	NVIC_SetPriorityGrouping(2); // Setup interrupt controller: // 4 subpriority for each priority
-	NVIC_SetPriority(EXTI2_IRQn, 8); // Setup EXTI2: // priority = 2, subpriority = 0 // Enable EXTI2
-	NVIC_EnableIRQ(EXTI2_IRQn);
+	NVIC_SetPriority(EXTI0_IRQn, 8); // Setup EXTI2: // priority = 2, subpriority = 0 // Enable EXTI2
+	NVIC_EnableIRQ(EXTI0_IRQn);
 	
 	NVIC_SetPriorityGrouping(2); // Setup interrupt controller: // 4 subpriority for each priority
 	NVIC_SetPriority(EXTI1_IRQn, 8); // Setup EXTI2: // priority = 2, subpriority = 0 // Enable EXTI2

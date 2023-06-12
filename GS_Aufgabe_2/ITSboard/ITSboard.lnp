@@ -19,6 +19,7 @@
 ".\itsboard\errorhandling.o"
 ".\itsboard\output.o"
 ".\itsboard\fetch_update.o"
+".\itsboard\interrupt.o"
 ".\itsboard\font8.o"
 ".\itsboard\font12.o"
 ".\itsboard\font16.o"

@@ -47,10 +47,9 @@ int32_t setDirectionalLed(int32_t phase)
   * @param  None
   * @retval None
   */
-int32_t printTicks(void)
+int32_t printTicks(volatile int32_t* ticks)
 {
-	int32_t i = 0; 
-	getTicks(&i);
+	int32_t i = *ticks; 
 	GPIOD->BSRR = (TICK_BIT_MASK << 16);
 	GPIOD->BSRR = (i & TICK_BIT_MASK); //letzte 8 bits von i 
 	return OK; 

@@ -54,4 +54,4 @@
   ..\..\ITS_BRD_LIB\Utilities\AddFonts\fontsFLASH.h \
   ..\..\DisplayWaveshare\Inc\LCD_Touch.h ..\..\ITS_BRD_LIB\Inc\error.h \
   ..\..\ITS_BRD_LIB\Inc\timer.h Inc\init_reset.h Inc\fetch_update.h \
-  Inc\errorhandling.h Inc\output.h
+  Inc\errorhandling.h Inc\output.h Inc\interrupt.h

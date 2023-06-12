@@ -13,7 +13,6 @@
 
 volatile int32_t isinit = true; 
 volatile int32_t lastState = 0; 
-volatile int32_t ticks = 0;  
 volatile int32_t lastTicks = 0; 
 volatile uint32_t timeold = 0; 
 
@@ -35,7 +34,7 @@ int32_t fetch(volatile uint32_t* time,volatile int32_t* currentState,volatile in
   * @param  i - die Rückgabe liefert die Phase, currentState - der aktuelle Zustand
   * @retval 1 - falls eine Phase übersprungen wurde
   */
-int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState)
+int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState, volatile int32_t* ticks)
 {	
 	if(isinit)
 	{
@@ -54,12 +53,12 @@ int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState)
 				else if(B == currentState)
 				{
 					*i = FORWARD; 
-					++ticks;
+					*ticks += 1;
 				}
 				else if(D == currentState)
 				{
 					*i = BACKWARD; 
-					--ticks;
+					*ticks -= 1;
 				}
 				else 
 				{
@@ -76,12 +75,12 @@ int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState)
 				else if(C == currentState)
 				{
 					*i = FORWARD; 
-					++ticks; 
+					*ticks += 1; 
 				}
 				else if(A == currentState)
 				{
 					*i = BACKWARD; 
-					--ticks;
+					*ticks -= 1;
 				}
 				else 
 				{
@@ -98,12 +97,12 @@ int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState)
 				 else if(D == currentState)
 				 {
 				 	*i = FORWARD; 
-				 	++ticks;
+				 	*ticks += 1;
 				 }
 				 else if(B == currentState)
 				 {
 				 	*i = BACKWARD; 
-				 	--ticks;
+				 	*ticks -= 1;
 				 }
 				 else 
 				 {
@@ -120,12 +119,12 @@ int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState)
 				else if(A == currentState)
 				{
 					*i = FORWARD; 
-					++ticks; 
+					*ticks += 1; 
 				}
 				else if(C == currentState)
 				{
 					*i = BACKWARD; 
-					--ticks;
+					*ticks -= 1;
 				}
 				else 
 				{
@@ -144,12 +143,12 @@ int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState)
   * @param  i - die Rückgabe
   * @retval None
   */
-int32_t deltaAngle(int32_t* i, uint32_t time)
+int32_t deltaAngle(volatile int32_t* i,volatile uint32_t time, volatile int32_t* ticks)
 {
 	//*i = ((10*(ticks -lastTicks)) /(3*(time - timeold)))*90000000 ; 
 	//timeold = time;
-	*i = 3*(ticks-lastTicks);
-	lastTicks = ticks;
+	*i = 3*(*ticks-lastTicks);
+	lastTicks = *ticks;
 	return OK; 
 }
 
@@ -158,9 +157,9 @@ int32_t deltaAngle(int32_t* i, uint32_t time)
   * @param  i - die Rückgabe
   * @retval None
   */
-int32_t totalAngle(int32_t* i)
+int32_t totalAngle(volatile int32_t* i, volatile int32_t* ticks)
 {
-	*i = 3*ticks; 
+	*i = 3*(*ticks); 
 	return OK; 
 }
 
@@ -169,21 +168,10 @@ int32_t totalAngle(int32_t* i)
   * @param  None
   * @retval None
   */
-int32_t resetTicks(void)
+int32_t resetTicks(volatile int32_t* ticks)
 {
 	isinit = true; 
-	ticks = 0; 
+	*ticks = 0; 
 	lastTicks = 0; 
-	return OK; 
-}
-
-/**
-  * @brief  liefert die Anzahl der Ticks 
-  * @param  i - die Rückgabe
-  * @retval None
-  */
-int32_t getTicks(int32_t* i)
-{
-	*i = ticks; 
 	return OK; 
 }
