@@ -40,6 +40,8 @@ volatile int32_t phase = 0;
 volatile int32_t ticks = 0;  
 volatile int32_t angVel = 0;
 volatile int32_t angle = 0; 
+volatile uint32_t oldtime = 0;
+volatile int32_t oldticks = 0; 
 
 void EXTI0_IRQHandler(void)
 {
@@ -51,6 +53,7 @@ void EXTI0_IRQHandler(void)
 			errorHandler();
 			resetTicks(&ticks);
 		}
+		getVelocity(&angVel,time, ticks, &oldtime, &oldticks);
 }
 
 void EXTI1_IRQHandler(void)
@@ -63,6 +66,7 @@ void EXTI1_IRQHandler(void)
 			errorHandler();
 			resetTicks(&ticks);
 		}
+		getVelocity(&angVel,time, ticks, &oldtime, &oldticks);
 }
 
 
@@ -82,26 +86,17 @@ int main(void){
 	{	
 		fetch(&time,&currentState,&buttons);
 		
-		if(detectPhase(&phase, currentState,&ticks)) //276 ns
-		{
-			//fehlerhandling
-			errorHandler();
-			resetTicks(&ticks);
-		}
-		
 		if(!(S7 & buttons)) //65ns - 122ns
 		{
 			resetTicks(&ticks);
 		}	
-		
+
 	  totalAngle(&angle,&ticks); //90ns
-		
-		
 		
 		if(TOLERANCE >= (time % TICKS_PER_SECOND))
 		{
 			printValues(angle,angVel); //7 micro sec - 7,7ms
-			deltaAngle(&angVel, time,&ticks);
+			getVelocity(&angVel,time, ticks, &oldtime, &oldticks);
 		}
 		
 		//ausgabe 314ns 

@@ -10,6 +10,7 @@
 #define true 1
 #define false 0
 #define MASK_PIN_0_1 0b11
+#define TIMER_MAX_VALUE 0xFFFFFFFF
 
 volatile int32_t isinit = true; 
 volatile int32_t lastState = 0; 
@@ -40,6 +41,7 @@ int32_t detectPhase(volatile int32_t* i,volatile int32_t currentState, volatile 
 	{
 		lastState = currentState;
 		isinit = false; 
+		*ticks += 1; 
 	}
 	
 	switch(lastState) //anhand des Letzten und des aktuellen Zustands die Phase ermitteln
@@ -150,6 +152,26 @@ int32_t deltaAngle(volatile int32_t* i,volatile uint32_t time, volatile int32_t*
 	*i = 3*(*ticks-lastTicks);
 	lastTicks = *ticks;
 	return OK; 
+}
+
+int32_t getVelocity(volatile int32_t* i,volatile uint32_t time, volatile int32_t ticks, volatile uint32_t* oldtime, volatile int32_t* oldticks)
+{
+		int32_t delta_angle = 3*(ticks - *oldticks); 
+		uint32_t delta_time = 0; 
+		
+		if(*oldtime > time)
+		{
+			delta_time = ((TIMER_MAX_VALUE / *oldtime) + time);
+		}
+		else 
+		{
+			delta_time =(time - *oldtime); 
+		}
+		
+		*i = (((delta_angle * 1000000) / (delta_time / 9))*10); 
+		*oldtime = time; 
+		*oldticks = ticks;
+		return OK; 
 }
 
 /**
